@@ -1,0 +1,69 @@
+{% for block in entry.hotelAndTravelContent.all() %}
+
+{% switch block.type %}
+
+	{% case "travelHeading" %}
+	<section class="small-header" style="background-image: url({{ siteUrl }}{{ block.backgroundImage.one().getUrl() }});">
+		<div class="inner">
+		<div class="small-header-title">
+			<h1>{{ block.headerTitle }}</h1>
+		</div>
+		</div>
+	</section>
+
+	{% case "hotelInformation" %}
+	<div class="info-block">
+		<div class="standard-wrapper">
+		<h2 class="info-title">{{block.infoTitle}}</h2>
+		{{block.infoDescription}}
+		<div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
+		</div>
+	</div>
+
+	{% case "hotelIntro" %}
+		<div class="intro-block standard-wrapper">
+			<div class="intro-title">
+				<h2>{{ block.introTitle }}</h2>
+			</div>
+			<div class="intro-description">
+				<p>{{ block.introDescription }}</p>
+			</div>
+		</div>
+
+		{% case "sideImage" %}
+		{% if block.isImageOnLeft %}
+		<div class="side-image standard-wrapper">
+			<div class="side-image-image side-image-block small-padding">
+				<img class="lazy" src="{{siteUrl}}{{ block.image.one().getUrl() }}" data-srcset="{{siteUrl}}{{ block.image.one().getUrl() }}"/>
+			</div>
+			<div class="image-text side-image-block small-padding">
+				<div><h2 class="image-title">{{ block.imageTitle }}</h2></div>
+				<div class="image-teaser">{{ block.imageTeaser }}</div>
+				<div class="image-description"><p>{{ block.imageDescription }}</p></div>
+			</div>
+		</div>
+		{% else %}
+		<div class="side-image standard-wrapper">
+			<div class="image-text side-image-block small-padding">
+				<div><h2 class="image-title">{{ block.imageTitle }}</h2></div>
+				<div class="image-teaser">{{ block.imageTeaser }}</div>
+				<div class="image-description"><p>{{ block.imageDescription }}</p></div>
+			</div>
+			<div class="side-image-image side-image-block small-padding">
+				<img src="{{siteUrl}}{{ block.image.one().getUrl() }}" />
+			</div>
+		</div>
+		{% endif %}
+
+		{% case "cityAttractions" %}
+		<div class="standard-wrapper left-align">
+			<h2>{{ block.attractionsTitle }}</h2>
+			<div>{{ block.attractionsList }}</div>
+			<div>{{ block.moreAttractions}}</div>
+		</div>
+			
+	{% default %}
+	
+
+{% endswitch %}
+{% endfor %}

@@ -1,0 +1,25 @@
+@media (min-width: 1400px){
+  @include main-header--xl();
+}
+
+// small screen size (sm)
+@media (max-width: 768px) {
+  @include nav--sm();
+  @include main-header--sm();
+  @include small-header--sm();
+  @include blobs--sm();
+  @include intro-block--sm();
+  @include columned-block--sm();
+  @include callout-block--sm();
+  @include side-block--sm();
+  @include page-copy--sm();
+  @include side-image--sm();
+  //@include divider--sm(); 
+  @include speakers-landing--sm(); 
+  @include sessions-landing--sm(); 
+  //@include sessions-details--sm(); 
+  @include pricing--sm(); 
+  @include travel--sm(); 
+  @include thank-you--sm(); 
+  @include slider--sm(); 
+}

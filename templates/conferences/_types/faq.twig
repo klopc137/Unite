@@ -1,0 +1,48 @@
+{% for block in entry.faqContent.all() %}
+
+{% switch block.type %}
+{% case "faqHeading" %}
+	<section class="small-header" style="background-image: url({{ siteUrl }}{{ block.backgroundImage.one().getUrl() }});">
+		<div class="inner">
+		<div class="small-header-title">
+			<h1>{{ block.headerTitle }}</h1>
+		</div>
+		</div>
+	</section>
+
+<div class="standard-wrapper">
+{% case "questionsSectionTitle" %}
+<h3 class="block-title">{{ block.sectionTitle }}</h3>	
+
+{% case "questions" %}
+<div class="accordion-panel">
+	<a href="javascript:void(0);" class="accordion"><span class="icon"></span>
+	{{block.question}}</a>
+	<div class="panel">
+		<p>{{block.answer}}</p>
+	</div>
+</div>
+
+{% default %}
+	
+
+{% endswitch %}
+{% endfor %}
+</div>
+<script>
+/*var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}*/
+
+</script>

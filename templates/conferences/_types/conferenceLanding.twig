@@ -1,0 +1,161 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232474-26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-232474-26');
+</script>
+
+<section class="main-header front">
+  
+  <canvas id="lamp-anim" class="lamp-anim"></canvas>
+  
+  <div class="header-content large-padding">
+  
+    <div class="logo">
+      <img src="{{siteUrl}}{{ entry.conferenceLogo.one().getUrl() }}" />
+      <div class="uppercase location"><h5>{{entry.conferenceCity}}</h5></div>
+      <div><a href="{{ entry.introLinkUrl }}" class="button-block">{{ entry.introLinkText }}</a></div>
+    </div>
+    
+    <div class="intro">
+      <h1>{{entry.introText}}&nbsp;<br/><span class="typewriter">{{entry.animatedText}}</span></h1>
+    </div>
+    
+
+    <div class="date-row">
+
+      <div class="right-box">
+        <div class="dates">
+          {% for block in entry.conferenceDates.all() %}
+          <div class="date-block">
+            <div>{{block.eventTitle}}</div>
+            <div>{{ block.eventDates }}</div>
+          </div>
+
+          {% endfor %}
+        </div>  
+      </div>
+    </div>   
+  </div>
+	
+</section>
+
+<section class="blobs">
+  <img src="{{siteUrl}}images/Sphere_05.png" data-srcset="{{siteUrl}}images/Sphere_05.png" class="lazy blob blob1" />
+  <img src="{{siteUrl}}images/Sphere_06.png" data-srcset="{{siteUrl}}images/Sphere_06.png" class="lazy blob blob2" />
+  <img src="{{siteUrl}}images/Sphere_05.png" data-srcset="{{siteUrl}}images/Sphere_05.png" class="lazy blob blob3" />
+  <img src="{{siteUrl}}images/Sphere_06.png" data-srcset="{{siteUrl}}images/Sphere_06.png" class="lazy blob blob4" />
+  <img src="{{siteUrl}}images/Sphere_05.png" data-srcset="{{siteUrl}}images/Sphere_05.png" class="lazy blob blob5" />
+  <img src="{{siteUrl}}images/Sphere_06.png" data-srcset="{{siteUrl}}images/Sphere_06.png" class="lazy blob blob6" />
+  <img src="{{siteUrl}}images/Sphere_06.png" data-srcset="{{siteUrl}}images/Sphere_05.png" class="lazy blob blob7" />
+</section>
+{% for block in entry.bodyContent.all() %}
+  		{% switch block.type %}
+  	
+  			{% case "pageCopy" %}
+        <section class="front">
+        <div class="bg-image-divider" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});"></div>
+        <div class="page-copy large-padding standard-wrapper left-align">
+          <div class="page-copy-text">
+            <div>
+              <h1 class="page-copy-title">{{ block.copyHeader }}</h1>
+              <div class="page-copy-description">
+                <div>{{ block.copyDescription }}</div>
+                <div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
+              </div>    
+            </div>
+          </div> 
+        </div>
+      </section>
+      
+  		  {% case "columnedText" %}
+        <div class="large-padding front">
+        <div class="standard-wrapper">
+        <div class="purple-text"><h1 class="columned-text-title">{{block.blockTitle}}</h1></div>
+        </div>
+        {% set perksEntry = block.perksCards.all() %}
+        {% for entry in perksEntry %}
+        {% if loop.first %}
+          <div class="standard-wrapper">
+            <div class="columned-row">
+        {% endif %}
+          <div class="columned-block left-align">
+          <div class="block-title pink-text">{{ entry.blockTitle }}</div>
+          <div class="block-description">{{ entry.blockDescription }}</div>
+          </div>
+        {% if loop.last %}</div></div>{% endif %}
+        {% endfor %}
+        </div>
+
+        {% case "imageSlider" %}
+        <div class="slider-block large-padding front">
+          <div class="standard-wrapper">
+          <div class="block-title">{{ block.blockTitle }}</div>
+          <div class="link"><a href="{{ block.linkUrl }}">{{ block.linkText }}</a></div>
+        </div>
+        {% set imageEntries = block.images.all() %}  
+        {% for entry in imageEntries %}
+        {% if loop.first %}
+         
+        <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="indicator"><p>Swipe</p></div>
+          <div class="swiper-wrapper">
+        {% endif %}
+            <!-- Slides -->
+            <div class="swiper-slide"><img class="lazy" src="{{siteUrl}}{{entry.sliderImage.one().getUrl()}}" data-srcset="{{siteUrl}}{{entry.sliderImage.one().getUrl()}}"/></div>
+        {% if loop.last %}</div></div>{% endif %}
+        {% endfor %}
+        </div>
+
+        {% case "calloutBlock" %}
+        {% set entries = block.calloutEntries.all() %}
+        {% for entry in entries %}
+        {% if loop.first %}
+          <div class="callout large-padding front">
+            <div class="callout-row">
+        {% endif %}
+          <div class="callout-block left-align">
+            <div class="block-title">{{ entry.calloutTitle }}</div>
+            <div class="block-description">{{ entry.calloutDescription }}</div>
+            <div><a href="{{ entry.linkUrl }}" class="button-block">{{ entry.linkText }}</a></div>
+          </div>
+        {% if loop.last %}</div></div>{% endif %}
+        {% endfor %}
+           
+  			{% case "sideBlock" %}
+        {% if block.isWhiteBackground %}
+          {% set divColor = 'white-background-color' %}
+        {% else %}
+          {% set divColor = 'background-color' %}
+        {% endif %}
+        {% if block.isBlockOnTheRight %}
+          {% set divPosition = 'float-right' %}
+        {% else %}
+          {% set divPosition = 'float-left' %}
+        {% endif %}
+  			<div class="side-block large-padding front" style="background-image: url({{siteUrl}}{{ block.blockBackgroundImage.one().getUrl() }})">
+  				<div class="standard-wrapper {{ divPosition }}">
+  					<div class="inner {{ divColor }}">
+  						<div class="block-title"><h2>{{ block.blockTitle }}</h2></div>
+  						<div class="block-teaser"><p>{{ block.blockTeaser }}</p></div>
+  						<div class="block-description">
+  							<p><strong>{{ block.strongWord }}</strong> {{ block.blockDescription }}</p>
+  						</div>
+              <div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
+  					</div>
+  				</div>
+  			</div>
+  			
+        
+  			
+  			{% default %}
+  			
+  			
+  		{% endswitch %}
+  		
+{% endfor %}
+

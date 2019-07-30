@@ -1,0 +1,80 @@
+.individual-header{
+	background-color: #f9f9f9;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #dce0e0;
+
+    .standard-wrapper{
+    max-width: 1425px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0 90px;
+    display: flex;
+    flex-direction: row;
+
+    	.speaker-image{
+    		margin-right: 50px;
+    		line-height: 0;
+
+    		img{
+    			width: 160px;
+    			height: auto;
+    			border-radius: 250px;
+    		}
+    	}
+
+    	.speaker-inner{
+    		text-align: left;
+
+    		.speaker-name{
+    			line-height: 1.2em;
+    			text-transform: uppercase;
+    			font-weight: 600;
+    			color: $color-pink;
+    			font-size: 67px;
+    		}
+
+    		.speaker-job{
+    			font-size: 15px;
+    			font-weight: 500;
+    		}
+
+            .speaker-website{
+                margin-top: 30px;
+                font-weight: 600;
+                a{
+                color: $color-pink;
+                } 
+            }
+    	}
+    }
+}
+
+.speaker-intro{
+    display: flex;
+    flex-direction: row;
+.speaker-logo{
+   align-items: center;
+   margin: auto 2em auto 0;
+   max-width: 60%;
+   height: auto;
+}
+.speaker-details{
+    text-align: left;
+    
+
+    p{
+        padding-top: .7em;
+        padding-bottom: 1.3em;
+    }
+
+    .session-title{
+        
+        font-weight: 700;
+        font-size: 17px;
+    }
+}
+}

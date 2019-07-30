@@ -1,0 +1,216 @@
+.main-header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  margin: auto;
+  background: #f857a6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right top, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right top, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(-45deg, rgb(255, 0, 87) 0%, rgb(117, 55, 151) 100%);
+  background: linear-gradient(to right top, RGBA(117, 55, 151, 1) 0%, RGBA(255, 0, 87, 1) 100%);
+
+  #lamp-anim{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .header-content {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    display: flexbox;
+    color: white;
+    flex-direction: row;
+    padding: 0 80px;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    .row{
+      width: 100%;
+      clear: both;
+    }
+    .logo{
+      text-align: center;
+      img {
+        max-width: 500px;
+        height: auto;
+        //margin-bottom: 40px;
+      }
+      .location{
+        color: rgba(255,255,255,0.9);
+        letter-spacing: 2px;
+        margin: 20px 0;
+      }
+      .button-block{
+          background: transparent;
+          border: 1px solid #ffffff;
+          align-self: center;
+          text-align: center;
+          margin: 20px auto;
+        }
+    }
+    .intro{
+      text-align: left;
+    }
+    .logo, .intro{
+      //width: 50%;
+      //flex: 1 1 0%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 50%;
+      //display: block;
+      z-index: 100000;
+
+      //justify-content: center;
+      margin: auto;
+
+      h1{
+        //font-size: 52px;
+        font-size: 4vw;
+        font-family: 'Rubik', sans-serif;
+        margin-right: 10px;
+        
+        .typewriter {
+          overflow: hidden; /* Ensures the content is not revealed until the animation */
+        }
+      }
+    }
+    .date-row{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: flex-end;
+      .left-box{
+        flex-basis: 50%;
+        justify-content: center;
+        margin: auto;
+        
+      }
+      .right-box{
+        flex-basis: 50%;
+        justify-content: space-between;
+
+        
+        .dates {
+          font-family: 'Poppins';
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 87.5%;
+          text-shadow: none;
+          line-height: 1.5;
+          font-style: normal;
+          text-decoration: none;
+          text-align: inherit;
+          letter-spacing: 2px;
+          word-spacing: normal;
+          //text-transform: uppercase;
+          margin: 40px 0;
+          display: flex;
+          justify-content: flex-end;
+          flex-basis: 50%;
+          text-align: left;
+
+          .date-block{
+            //flex-basis: 50%;
+            flex: 1 1 0;
+            font-size: 24px;
+            font-weight: 400;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    
+
+  }
+}
+
+//called in media-queries.scss
+@mixin main-header--xl() {
+  .main-header{
+    .header-content{
+      .intro{
+        h1{
+          //font-size: 66px;
+        }
+      }
+    }
+  }
+
+}
+@mixin main-header--sm() {
+  .main-header{
+    .header-content {
+      flex-direction: column;
+      padding: 0 20px;
+      justify-content: center;
+      .logo{
+        flex: 0 1 0;
+        margin: 10px 0;
+
+        img{
+          max-width: 250px;
+          margin-bottom: 0;
+        }
+
+        .location, .button-block{
+          margin: 10px 0;
+        }
+
+      }
+      .intro{
+        
+        padding: 0;
+        flex: 0 1 0;
+        margin: 0;
+        h1{
+          
+          font-size: 7vw;
+        }
+      }
+      .date-row{
+        justify-content: flex-start;
+        .left-box{
+          order: 2;
+        }
+        .right-box{
+          flex-basis: 100%;
+            .dates{
+              text-align: center;
+              margin: 10px 0;
+              .date-block{
+                font-size: 14px;
+              }
+            }
+        }
+      }
+    }
+  }
+}
+
+.video-overlay {
+  background-image: linear-gradient(45deg, rgb(255, 0, 87) 0%, rgb(117, 55, 151) 100%);
+  background: linear-gradient(45deg, RGBA(255, 0, 87, 1) 0%, RGBA(117, 55, 151, 1) 100%);
+}
+
+.video-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  z-index: -100;
+}
+
+
+
+

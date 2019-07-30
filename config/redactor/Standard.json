@@ -1,0 +1,13 @@
+{
+  "buttons": ["html", "formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
+  "plugins": ["fullscreen", "video"],
+  "allowedTags": ["span"],
+  "cleanInlineOnEnter": false,
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "paragraphize": false,
+  "replaceDivs": false,
+  "linebreaks": true,
+  "enterKey": false
+}
+

@@ -1,0 +1,103 @@
+
+{% extends '_layouts/main' %}
+
+{% block main %}
+{% set subnav = craft.entries.section('conferences').level(1).all() %}
+<nav class="navbar navbar-expand-lg main-menu">
+	<div class="standard-wrapper">
+		<div class="navbar-brand logo logo-white visible"><img src="{{siteUrl}}images/logos/unite-generic-white.png"/></div>
+		<div class="navbar-brand logo logo-black hidden"><img src="{{siteUrl}}images/logos/unite-generic-black-1.png"/></div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="myFunction(this)">
+			<span class="navbar-toggler-icon">
+			<div class="bar1"></div>
+  			<div class="bar2"></div>
+  			<div class="bar3"></div></span>
+		</button>
+
+		<div class="collapse navbar-collapse float-right menu" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto no-list-style">
+				<li class="nav-item dropdown">
+					<a class="dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Conferences
+					</a><i class="fa fa-chevron-down"></i>
+					<div class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown">
+						<ul class="no-list-style">
+							{% for page in subnav %}
+							<li class="nav-item">
+								{{ page.link }}
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+		{% for entry in craft.entries.section('homepage').all() %}
+		    
+		
+		<div class="main-content" style="background-image: url({{siteUrl}}{{ entry.backgroundImage.one().getUrl() }});">
+		<!-- Overlay Background Image -->
+		<div class="overlay"></div>
+		<!-- End overlay -->
+			<div class="main-content-left">
+				<div class="highlighted-heading-wrapper">
+					<div>{{ entry.staticTitleWord }}</div>
+					<div class="highlight">
+						<div class="highlighted-text">{{entry.animatedTitleWord}}</div>
+						<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none">
+							<path class="path" d="M455,170 C392,148 24,163 9,165 C7,138 3,50 5,29 C28,25 461,-6 495,20 C494,44 493,137 492,150" ></path>
+						</svg>	
+					</div>
+				</div>
+				<div class="intro">
+					<div>
+						<p>{{ entry.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			<div class="main-content-right">
+				
+				{% for entry in craft.entries.section('conferences').limit(4).level(1).all() %}
+				
+				<div class="home-card {{entry.className}}">
+				
+					<a href="{{ entry.url }}">
+				
+					<div class="row-inner-content">
+						
+						<div class="img-wrapper">
+							<img src="{{siteUrl}}{{ entry.conferenceThumbnail.one().getUrl() }}"/>
+						</div>
+						
+						<div class="card-title">
+							<p>{{ entry.title }}</p>
+						</div>
+
+						<div class="card-location">
+							<p>{{entry.conferenceCity}}</p>
+						</div>
+						
+						
+							{% for block in entry.conferenceDates.all() %}
+							<div class="card-date">
+								<div>{{ block.eventTitle }}</div>
+								<div>{{ block.eventDates }}</div>
+							</div>
+							{% endfor %}
+						
+						
+					</div>
+					</a>
+				</div>
+				
+				{% endfor %}
+			</div>
+		</div>
+
+{% endblock %}
+
+		
+	

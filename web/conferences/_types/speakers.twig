@@ -1,0 +1,56 @@
+{% for block in entry.speakersContent.all() %}
+{% switch block.type %}
+
+	{% case "speakersHeader" %}
+	<section class="small-header" style="background-image: url({{siteUrl}}images/background-images{{ block.backgroundImage.one().getUrl() }});">
+		<div class="inner">
+		<div class="small-header-title">
+			<h1>{{ block.headerTitle }}</h1>
+		</div>
+		</div>
+	</section>
+
+	{% case "speakersIntro" %}
+	<div class="speakers-intro">
+		<div class="inner">
+			<div class="intro-title">
+				<h2>{{ block.introTitle }}</h2>
+			</div>
+			<div class="intro-description">
+				<p>{{ block.introDescription }}</p>
+			</div>
+		</div>
+	</div>
+
+	{% default %}
+
+{% endswitch %}
+
+
+{% endfor %}
+
+<div class="speaker-content">
+	{% for entry in craft.entries.section('conferences').descendantOf(entry.id).all()  %}
+		{% for block in entry.individualContent.all() %}
+			<div class="speaker-info">
+				<div class="speaker-image">
+					<a href="{{ entry.url }}"><img src="{{siteUrl}}images/speaker-images{{ block.speakerImage.one().getUrl() }}" /></a>
+				</div>
+				<h4 class="speaker-name">{{ block.speakerName }}</h4>
+				<p class="speaker-job">{{ block.speakerJob }}</p>
+			</div>
+		{% endfor %}
+	{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

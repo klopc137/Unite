@@ -1,0 +1,146 @@
+.pricing-intro{
+	text-align: left;
+   	margin: auto;
+  	padding: 20px 0 20px 0;
+    margin-top: 30px;
+
+    h2{
+    	color: $color-pink;
+    	font-size: 36px;
+    	text-transform: none;
+    	line-height: 1.5em;
+    	font-weight: 600;
+    }
+
+    .intro-description{
+    	padding-top: .7em;
+    		padding-bottom: 1.3em;
+    	p{
+    		font-weight: 400;
+    		font-size: 18px;
+    		color: #484848;
+    	}
+    }
+}
+.price-section{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 40px;
+	
+	.price-table{
+		&.featured-table{
+		border: 1px solid #5755d5;
+		border-radius: 5px;
+		}
+		list-style: none;
+		width: 33.33%;
+		padding-inline-start: 0 !important;
+		padding: 0;
+		margin: 0;
+		vertical-align: baseline;
+		border-top: 1px solid transparent;
+		.featured-row{
+    		color: #fff;
+    		text-transform: uppercase;
+    		font-weight: 600;
+    		text-align: center;
+    		font-size: 14px;
+    		background: #5755d5;
+    		vertical-align: middle;
+		}
+		.empty-row{
+			//height: 50px;
+		}
+		.title-row{
+			padding: 30px 0;
+
+			h3{
+				color: #5755d5;
+				font-size: 24px;
+				font-weight: 700;
+			}
+
+			.ticket-description{
+				font-size: 12px;
+    			text-transform: uppercase;
+    			color: $color-black;
+    			opacity: .6;
+    			font-weight: 600;
+			}
+
+		}
+		li{
+			padding: 13px 0;
+			margin: 0;
+			color: #484848;
+		}
+		.price{
+			font-size: 36px !important;
+    		font-weight: 600;
+    		letter-spacing: 0px;
+		}
+		ul{
+			padding-inline-start: 0 !important;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li{
+				border-top: 1px solid #e1e1e1;
+				color: #484848;
+				font-size: 17px;
+				font-weight: 400;
+				margin: 0;
+
+				&:last-child{
+					border-bottom: 1px solid #e1e1e1;
+				}
+			}
+		}
+	}
+}
+.copy-section{
+	padding: 40px 0;
+	.pricing-copy{
+		text-align: left;
+		margin: auto;
+
+		h2{
+			font-size: 28px;
+			color: $color-pink;
+			font-weight: 700; 
+		}
+		p{
+			padding-top: .7em;
+			padding-bottom: 1.3em;
+			font-weight: 400;
+			font-size: 18px;
+			color: #484848;
+		}
+	}
+}
+.top-border{
+	border-top: 1px solid #ebebeb;
+	text-align: left;
+	font-style: italic;
+	font-size: 18px;
+	padding: 13px 0;
+}
+
+@mixin pricing--sm() {
+	.pricing-intro{
+		padding: 20px 40px;
+	}
+	.price-section{
+		padding: 0 40px;
+
+		.price-table{
+			width: 100%;
+		}
+	}
+
+	.copy-section{
+		padding: 40px;
+	}
+}

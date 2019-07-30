@@ -1,0 +1,70 @@
+
+{% extends '_layouts/main' %}
+
+{% block main %}
+<!--<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Conferences
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+</div>-->
+		<div class="main-content">
+		<!-- Overlay Background Image -->
+		<div class="overlay"></div>
+		<!-- End overlay -->
+			<div class="main-content-left">
+				<div class="highlighted-heading-wrapper">
+					<div>Let's</div>
+					<div class="highlight" data-animate="1" data-delay="2000" data-loop-delay="2000">
+						<div class="highlighted-text">UNITE</div>	
+					</div>
+				</div>
+				<div class="intro">
+					<div>
+						<p>Join us for ongoing events designed to empower, engage, and unit the Ungerboeck community</p>
+					</div>
+				</div>
+			</div>
+			<div class="main-content-right">
+				
+				{% for entry in craft.entries.section('conferences').limit(4).level(1).all() %}
+				
+				<div class="home-card {{entry.className}}">
+				
+					<a href="{{ entry.url }}">
+				
+					<div class="row-inner-content">
+						
+						<div class="img-wrapper">
+							<img src="./images/thumbnails/{{ entry.conferenceThumbnail.one().getUrl() }}"/>
+						</div>
+						
+						<div class="card-title">
+							<p>{{ entry.title }}</p>
+						</div>
+						
+						<div class="card-date">
+							<p>{{ entry.conferenceDates }}</p>
+						</div>
+						
+						<div class="card-location">
+							<p>{{entry.conferenceCity}}</p>
+						</div>
+						
+					</div>
+					</a>
+				</div>
+				
+				{% endfor %}
+			</div>
+		</div>
+
+{% endblock %}
+		
+	

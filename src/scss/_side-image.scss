@@ -1,0 +1,95 @@
+.side-image {
+  display: flex;
+  flex-direction: row;
+  
+
+  .side-image-image {
+    padding: 0 !important;
+    height: 550px;
+    position: relative;
+
+    .parallax{
+      position: absolute;
+      height: 170%;
+      width: 100%;
+      z-index: -1;
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .side-image-block {
+    flex-basis: 50%;
+    //height: 550px;
+    margin: auto;
+    text-align: left;
+    padding: 75px;
+    
+    
+
+    .image-title {
+      color: #743798;
+      line-height: 1.5em;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .image-teaser {
+      margin-top: 10px;
+      font-weight: 500;
+      font-size: 15px;
+      color: $color-black;
+      width: auto;
+      float: none;
+    }
+
+    .image-description {
+      margin-top: 20px;
+      
+      p {
+        padding-top: .5em;
+        padding-bottom: .5em;
+        line-height: 1.7;
+        font-size: 17px;
+      }
+
+    }
+
+  }
+
+}
+
+//called in media-queries.scss
+@mixin side-image--sm() {
+  .side-image{
+    flex-direction: column;
+    width: 100%;
+
+    .side-image-image{
+
+      order: 1;
+      div{
+        height: 550px;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    .image-text{
+      order: 2;
+    }
+    .side-image-block{
+      margin: 0;
+      flex-basis: 100%;
+      padding: 0;
+
+      .image-title{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+
+

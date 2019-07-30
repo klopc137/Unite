@@ -1,0 +1,81 @@
+.speakers-intro{
+	padding: 40px 0;
+	margin: auto;
+	
+	.inner{
+		margin: auto;
+    	width: 100%;
+
+    	.intro-title, .intro-description{
+    		position: relative;
+    		max-width: 1425px;
+    		width: 100%;
+    		box-sizing: border-box;
+    		margin: auto;
+    		padding: 0 90px;
+    		font-family: 'Poppins';
+
+    		h2{
+    			text-align: left;
+    			font-size: 36px;
+    			line-height: 1.5em;
+    			font-weight: 600;
+    			color: $color-pink;
+    		}
+
+    		p{
+    			text-align: left;
+    			margin-top: 10px;
+    			font-weight: 500;
+    			font-size: 15px;
+    			color: $color-black;
+    			opacity: 0.8;
+
+    		}
+
+    	}
+	}
+}
+
+.speaker-content{
+    padding: 0 90px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+
+    .speaker-info{
+        //flex-basis: 20%;
+        padding: 10px 30px 15px 0;
+        //width: 100%;
+        flex: 0 1 0;
+
+        .speaker-image{
+            img{
+                max-width: 65%;
+            }
+        }
+
+        .speaker-name{
+            font-size: 20px;
+            color: $color-pink 
+        }
+
+        .speaker-job{
+            font-weight: 500;
+            font-size: 15px;
+        }
+    }
+}
+
+@mixin speakers-landing--sm() {
+    .speaker-content{
+        margin: auto;
+    .speaker-info{
+        /*flex: 0 1 0 !important;
+        padding-right: 10px;*/
+        margin: auto;
+    }
+}
+}

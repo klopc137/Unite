@@ -1,0 +1,25 @@
+{% for block in entry.sponsorsList.all() %}
+	{% switch block.type %}
+		{% case "sponsorsHeader" %}
+		<section class="small-header" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});">
+			<div class="inner">
+				<div class="small-header-title">
+					<h1>{{ block.headerTitle }}</h1>
+				</div>
+			</div>
+		</section>
+
+		{% case "sponsorsListIntro" %}
+		<section class="standard-wrapper">
+			<div class="partners-list-title left-align">{{ block.introTitle }}</div>
+		</section>
+
+		{% case "sponsor"%}
+		<section class="standard-wrapper left-align">
+			<div class="partners-logo"><img src="{{siteUrl}}{{ block.sponsorLogo.one().getUrl() }}" data-srcset="{{siteUrl}}{{ block.sponsorLogo.one().getUrl() }}" /></div>
+			<div class="partners-description">{{ block.sponsorDescription }}</div>
+		</section>
+		{% default %}
+	{% endswitch %}
+	
+{% endfor %}

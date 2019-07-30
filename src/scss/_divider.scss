@@ -1,0 +1,45 @@
+.divider {
+  font-family: Poppins;
+  font-size: 16px;
+  background-position: center top;
+  text-align: center;
+  padding: 105px 0px;
+  color: rgb(255, 255, 255) !important;
+  z-index: 0;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+ 
+  div {
+    //max-width: 1425px;
+    //width: 100%;
+    margin: auto;
+    //padding: 10px 90px;
+
+    .divider-title h1 {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0px;
+    }
+
+    .divider-description strong {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+  }
+}
+
+//called in media-queries.scss
+@mixin divider--sm() {
+  .divider{
+    div{
+      padding: 0 10px;
+      .divider-title h1{
+        font-size: 22px;
+      }
+    }
+  }
+}
+

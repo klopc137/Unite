@@ -1,0 +1,155 @@
+
+<section class="main-video-header">
+  
+  <div class="video-overlay"></div>
+  <video class="video-header" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+    <source src="{{siteUrl}}{{ entry.conferenceBackgroundVideo.one().getUrl() }}" type="video/mp4" media="">
+  </video>
+ 
+
+  <div class="header-content">
+   
+    <div class="logo">
+      <img src="{{siteUrl}}{{ entry.conferenceLogo.one().getUrl() }}" />
+    </div>
+    
+    {% for block in entry.conferenceDates.all() %}
+        <div class="date-block">
+          <div>{{ block.eventDates }}</div>
+          <div>{{block.eventTitle}}</div>
+        </div>
+    {% endfor %}
+    <div class="play-video">
+      <a onclick="return false;" class="video-btn" data-toggle="modal" data-src="{{ entry.videoUrl }}" data-target="#myModal"><img src="//conference.ungerboeck.com/wp-content/uploads/slider5/playicon.png" alt=""> Play Unite Video</a>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>        
+        <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    
+</section>
+
+
+{% for block in entry.bodyContent.all() %}
+      {% switch block.type %}
+        {% case "ceoIntro" %}
+        <div class="standard-wrapper">
+        <div class="ceo-block">
+          <div class="image-wrapper">
+            <img class="ceo-image" src="{{siteUrl}}{{ block.ceoImage.one().getUrl() }}" />
+          </div>
+
+          <div class="ceo-text parallax">
+            <div class="headshot-title"><h1>{{ block.ceoTitle }}</h1></div>
+            <div class="headshot-quote"><p>{{ block.ceoQuote }}</p></div>
+            <div class="quote-caption"><p><em>{{ block.quoteCaption }}</em></p></div>
+          </div>
+        </div>
+        </div>
+
+        {% case "pageCopy" %}
+        {% if block.centeredContent %}
+        <div class="page-copy-video text-center" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});">
+          <div class="page-copy-text">
+            <div>
+              <h1 class="page-copy-title"><p>{{ block.copyHeader }} <strong>{{ block.strongWord }}</strong></p></h1>
+              <p class="page-copy-description">{{ block.copyDescription }}</p>
+            </div>
+          </div>
+        </div>
+
+        {% else %}
+        <div class="page-copy-video" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }})">
+          <div class="page-copy-text">
+            <div>
+              <h1 class="page-copy-title"><p>{{ block.copyHeader }} <strong>{{ block.strongWord }}</strong></p></h1>
+              <p class="page-copy-description">{{ block.copyDescription }}</p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      
+        {% case "sideImage" %}
+
+        {% if block.mediaOnLeft %}
+        <div class="side-image">
+          <!--<div class="side-image-image side-image-block">
+            <div class="parallax" style="background-image: url({{siteUrl}}images/background-images{{ block.image.one().getUrl() }})"></div>
+          </div>-->
+          <div class="side-image-image side-image-block" style="background-image: url({{siteUrl}}{{ block.image.one().getUrl() }})"></div>
+          <div class="image-text side-image-block">
+            <div><h2 class="image-title">{{ block.imageTitle }}</h2></div>
+            <div class="image-teaser">{{ block.imageTeaser }}</div>
+            <div class="image-description"><p>{{ block.imageDescription }}</p></div>
+          </div>
+        </div>
+      {% else %}
+      <div class="side-image">
+        <div class="image-text side-image-block">
+          <div><h2 class="image-title">{{ block.imageTitle }}</h2></div>
+          <div class="image-teaser">{{ block.imageTeaser }}</div>
+          <div class="image-description"><p>{{ block.imageDescription }}</p></div>
+        </div>
+         <!--<div class="side-image-image side-image-block">
+            <div class="parallax" style="background-image: url({{siteUrl}}images/background-images{{ block.image.one().getUrl() }})"></div>
+          </div>-->
+          <div class="side-image-image side-image-block" style="background-image: url({{siteUrl}}{{ block.image.one().getUrl() }})"></div>
+      </div>
+      {% endif %}
+        
+
+        {% case "coloredDivider" %}
+        <div class="divider" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }})">
+          <div>
+            <div class="divider-title"><h1>{{ block.dividerTitle }}</h1></div>  
+            <div class="divider-description"><p><strong>{{block.strongWord}}</strong> {{ block.dividerDescription }}</p></div>
+          </div>
+        </div>  
+
+        {% case "sideBlock" %}
+        {% if block.isWhiteBackground %}
+          {% set divColor = 'white-background-color' %}
+        {% else %}
+          {% set divColor = 'background-color' %}
+        {% endif %}
+        {% if block.isBlockOnTheRight %}
+          {% set divPosition = 'float-right' %}
+        {% else %}
+          {% set divPosition = 'float-left' %}
+        {% endif %}
+        <div class="side-block" style="background-image: url({{siteUrl}}{{ block.blockBackgroundImage.one().getUrl() }})">
+          <div class="standard-wrapper {{ divPosition }}">
+            <div class="inner {{ divColor }}">
+              <div class="block-title"><h2>{{ block.blockTitle }}</h2></div>
+              <div class="block-teaser"><p>{{ block.blockTeaser }}</p></div>
+              <div class="block-description">
+                <p><strong>{{ block.strongWord }}</strong> {{ block.blockDescription }}</p>
+              </div>
+              <div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
+            </div>
+          </div>
+        </div>
+        
+        
+        {% default %}
+        
+        
+      {% endswitch %}
+      
+{% endfor %}
+
+
+

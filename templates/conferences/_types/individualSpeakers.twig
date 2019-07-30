@@ -1,0 +1,37 @@
+
+ 	{% for block in entry.individualContent.all() %}
+ 	{% switch block.type %}
+ 	
+ 		{% case "speakerDetails" %}
+ 		<div class="individual-header">
+ 			<div class="standard-wrapper">
+ 				<div class="speaker-image">
+ 					<img class="lazy" src="{{siteUrl}}{{ block.speakerImage.one().getUrl() }}" data-srcset="{{siteUrl}}{{ block.speakerImage.one().getUrl() }}" />
+ 				</div>
+ 				<div class="speaker-inner">
+ 					<h1 class="speaker-name">{{ block.speakerName }}</h1>
+ 					<p class="speaker-job">{{ block.speakerJob }}</p>
+ 					<div class="speaker-website">{{ block.companyLink }}</div>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<div class="speaker-intro standard-wrapper">
+ 		{% if block.companyLogo|length %}
+			<div class="speaker-logo">
+				<img class="lazy" src="{{siteUrl}}{{ block.companyLogo.one().getUrl() }}" data-srcset="{{siteUrl}}{{ block.companyLogo.one().getUrl() }}" />
+			</div>
+		{% endif %}
+ 		<div class="speaker-details">
+ 			<p class="session-title">{{ block.session }}</p>
+ 			{{ block.sessionDescription }}
+ 		</div>
+ 		</div>
+ 		{% default %}
+ 		
+ 	
+ 	{% endswitch %}
+ 	
+ 	{% endfor %}
+ 	
+ </div>

@@ -1,0 +1,67 @@
+
+.accordion-panel { 
+  margin: 1em 0 0;
+  text-align: left;
+
+  .icon {
+    display: inline-block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    border-radius: 250px;
+    background: $color-pink;
+    top: 50%;
+    text-indent: initial;
+    position: absolute;
+    margin-top: -25px;
+
+    &:before{
+      font-family: 'Font Awesome 5 Free';
+      content: "\f105";
+      position: absolute;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      line-height: 33px;
+      left: 0;
+    }
+  }
+  .icon.down{
+    &:before{
+      font-family: 'Font Awesome 5 Free';
+      content: "\f078"; 
+      position: absolute;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      line-height: 33px;
+      left: 0;   
+    }
+  }
+
+  .accordion { 
+   display: block;
+   position: relative;
+   border-bottom: 1px solid #dce0e0;
+   margin-top: 0;
+   background: 0 0;
+   outline: none;
+   box-shadow: 0 0 0 0 !important;
+   color: #484848;
+   padding: 1em 0;
+   font-size: 18px;
+   font-weight: 600;
+  
+  p{
+    padding: 0 2.5em;
+  }
+ }
+
+ .panel { 
+  display: none;  
+  margin-left: 1em; 
+  padding: 0 18px;
+  overflow: hidden;
+ }
+
+}

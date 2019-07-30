@@ -1,0 +1,97 @@
+.blobs{
+    //position: relative;
+    z-index: 1;
+    .blob{
+      position: fixed;
+      z-index: -1;
+      animation: float 6s ease-in-out infinite;
+      -webkit-animation: float 6s ease-in-out infinite;
+      -moz-animation:    float 6s ease-in-out infinite;
+      -o-animation:  float 6s ease-in-out infinite;
+      transform: translate3d(0,0,0);
+      backface-visibility: hidden; 
+      -webkit-backface-visibility: hidden;
+
+      @keyframes float {
+        0% {
+           -webkit-transform: translateY(0px) rotate(0deg);
+           -ms-transform: translateY(0px) rotate(0deg);
+          transform: translateY(0px) rotate(0deg);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+        50% {
+          -webkit-transform: translateY(-80px) rotate(180deg);
+           -ms-transform: translateY(-80px) rotate(180deg);
+          transform: translateY(-80px) rotate(180deg);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+        100% {
+          -webkit-transform: translateY(0px) rotate(0deg);
+           -ms-transform: translateY(0px) rotate(0deg);
+          transform: translateY(0px) rotate(0deg);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+      }
+    }
+    .blob1{
+      //transform: scale(3);
+      max-width: 300px;
+      top: 0;
+      left: 0;
+    }
+    .blob2{
+      //transform: scale(1.2);
+      max-width: 100px;
+      right: 0;
+      top: 480px;
+    }
+    .blob3{
+      //transform: scale(0.2);
+      max-width: 240px;
+      right: 60px;
+      top: 200px;
+    }
+    .blob4{
+      //transform: scale(0.1);
+      left: 20px;
+      top: 600px;
+    }
+    .blob5{
+      max-width: 300px;
+      right: 120px;
+      top:400px;
+    }
+    .blob6{
+      max-width: 180px;
+      left: 120px;
+      top: 300px;
+    }
+    .blob7{
+      max-width: 150px;
+      right: 480px;
+      top: 200px;
+    }
+  }
+
+  @mixin blobs--sm(){
+    .blobs{
+      .blob1{
+        max-width: 100px;
+      }
+      .blob2{
+        max-width: 100px;
+      }
+      .blob3{
+        max-width: 200px;
+      }
+      .blob4{
+        max-width: 200px;
+      }
+      .blob5, .blob6, .blob7{
+        display: none;
+      }
+    }
+  }

@@ -1,0 +1,95 @@
+{% for block in entry.pricingContent.all() %}
+
+{% switch block.type %}
+	
+	{% case "pricingHeader" %}
+	<section class="small-header" style="background-image: url({{ siteUrl }}images/background-images{{ block.backgroundImage.one().getUrl() }});">
+		<div class="inner">
+		<div class="small-header-title">
+			<h1>{{ block.headerTitle }}</h1>
+		</div>
+		</div>
+	</section>
+
+	<div class="standard-wrapper">
+	{% case "pricingIntro" %}
+	<div class="pricing-intro">
+			<div class="intro-title">
+				<h2>{{ block.introTitle }}</h2>
+			</div>
+			<div class="intro-description">
+				{{ block.introDescription }}
+			</div>
+	</div>
+
+	{% case "prices" %}
+			<div class="price-section">
+			{% for entry in craft.entries.relatedTo(block).section('prices').all() %}
+			{% if entry.isFeatured %}
+				<ul class="price-table featured-table">
+					<li class="featured-row">Now Open</li>	
+			    	<li class="title-row"><h3 class="list-heading">{{ entry.tableHeading}}</h3>
+			    		<div class="ticket-description">{{ entry.tableStatus }}</div>
+			    	</li>
+			    	<li>{{entry.tableListItems}}</li>
+			    	<li class="price">{{entry.tablePricing}}</li>
+			    	<div class="button-block"><a href="https://registration.ungerboeck.com/emc00/register.aspx?eid=eG5icFZxL01IYnlZOGk4aEo1eUFTQT090&amp;PROMO=ultraearly5" target="_blank">Register Now</a></div>
+			    </ul>
+			   
+			{% else %}
+			    <ul class="price-table">
+			    	<li class="empty-row"></li>
+			    	<li class="title-row"><h3 class="list-heading">{{ entry.tableHeading}}</h3>
+			    		<div class="ticket-description">{{ entry.tableStatus }}</div>
+			    	</li>
+			    	<li>{{entry.tableListItems}}</li>
+			    	<li class="price">{{entry.tablePricing}}</li>
+			    </ul>
+			{% endif %}   
+			{% endfor %}
+			</div>
+	<div class="copy-section">
+	{% case "pricingCopy" %}
+	<div class="pricing-copy">
+			<div class="copy-title">
+				<h2>{{ block.copyTitle }}</h2>
+			</div>
+			<div class="copy-description">
+				{{ block.copyDescription }}
+			</div>
+	</div>
+
+	{% case "pricesDisclaimer" %}
+		<div class="top-border">{{ block.description }}</div>
+	</div><!-- end copy-section -->
+	</div><!-- end standard-wrapper -->
+	{% case "sideBlock" %}
+        {% if block.isWhiteBackground %}
+          {% set divColor = 'white-background-color' %}
+        {% else %}
+          {% set divColor = 'background-color' %}
+        {% endif %}
+        {% if block.isBlockOnTheRight %}
+          {% set divPosition = 'float-right' %}
+        {% else %}
+          {% set divPosition = 'float-left' %}
+        {% endif %}
+  			<div class="side-block" style="background-image: url({{siteUrl}}images/background-images{{ block.blockBackgroundImage.one().getUrl() }})">
+  				<div class="standard_wrapper {{ divPosition }}">
+  					<div class="inner {{ divColor }}">
+  						<div class="block-title"><h2>{{ block.blockTitle }}</h2></div>
+  						<div class="block-teaser"><p>{{ block.blockTeaser }}</p></div>
+  						<div class="block-description">
+  							<p><strong>{{ block.strongWord }}</strong> {{ block.blockDescription }}</p>
+  						</div>
+              <div class="button-block">{{ block.button }}</div>
+  					</div>
+  				</div>
+  			</div>
+		
+	{% default %}
+
+	
+
+{% endswitch %}
+{% endfor %}

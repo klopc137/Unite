@@ -1,0 +1,123 @@
+.slider-block{
+  display: flex;
+  flex-direction: column;
+  width: 100vw !important;
+  //height: 500px !important;
+  background: linear-gradient(to right top, RGBA(117, 55, 151, 1) 0%, RGBA(255, 0, 87, 1) 100%);
+  position: relative;
+  padding: 20px 0;
+
+  .indicator{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    background-color: #fff;
+    opacity: 0.9;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+
+    p{
+      margin: auto;
+      align-self: center;
+    }
+  }
+
+  .block-title{
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+  }
+  .link{
+    text-align: left;
+    margin-bottom: 40px;
+    a{
+      color: #ffffff;
+      text-decoration: underline;
+
+    }
+  }
+  .swiper-container {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    cursor: move; /* fallback: no `url()` support or images disabled */
+    //cursor: url(images/grab.cur); /* fallback: Internet Explorer */
+    cursor: -webkit-grab; /* Chrome 1-21, Safari 4+ */
+    cursor:    -moz-grab; /* Firefox 1.5-26 */
+    cursor:         grab; /* W3C standards syntax, should come least */
+    touch-action: none;
+
+    &:active{
+      //cursor: url(images/grabbing.cur);
+      cursor: -webkit-grabbing;
+      cursor:    -moz-grabbing;
+      cursor:         grabbing;
+    }
+
+    .swiper-slide{
+      margin: auto;
+      height: auto;
+
+      &:nth-child(even){
+          transform: scale(0.8);
+        }
+      img{
+        width: 100%;
+
+
+      }
+    }
+  }
+}
+.quote-swiper-wrapper{
+  width: 50%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .quote-swiper-container{
+    width: 100%;
+    padding: 40px 0;
+
+    .swiper-slide{
+      width: 100%;
+
+      .quote{
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+    }
+  }
+  .swiper-pagination{
+    width: 100%;
+    margin: auto;
+    position: relative;
+
+    .swiper-pagination-bullet{
+      margin: 0 5px;
+
+      &:visited, &:focus, &:active{
+        outline: none;
+      }
+    }
+    .swiper-pagination-bullet-active{
+      background: $color-pink;
+      transform: scale(1.2);
+    }
+  }
+}
+
+//called in media-queries.scss
+@mixin slider--sm() {
+  .quote-swiper-wrapper{
+    width: 90%;    
+  }
+}

@@ -1,0 +1,81 @@
+
+{% for block in entry.sessionsContent.all() %}
+
+{% switch block.type %}
+
+	{% case "sessionsHeader" %}
+	<section class="small-header" style="background-image: url({{ siteUrl }}{{ block.backgroundImage.one().getUrl() }});">
+		<div class="inner">
+		<div class="small-header-title">
+			<h1>{{ block.headerTitle }}</h1>
+		</div>
+		</div>
+	</section>
+
+	{% case "sessionsIntro" %}
+	<div class="intro-block">
+			<div class="intro-title">
+				<h2>{{ block.introTitle }}</h2>
+			</div>
+			<div class="intro-description">
+				<p>{{ block.introDescription }}</p>
+			</div>
+	</div>
+
+	{% case "sideBlock" %}
+	{% if block.isWhiteBackground %}
+		{% set divColor = 'white-background' %}
+	{% endif %}
+	{% if block.isBlockOnTheRight %}
+		{% set divPosition = 'float-right' %}
+	{% endif %}
+	<div class="side-block" style="background-image: url({{ siteUrl }}{{ block.blockBackgroundImage.one().getUrl() }})">
+		<div class="standard_wrapper {{divPosition}} {{divColor}}">
+			<div class="inner">
+				<div class="block-title"><h2>{{ block.blockTitle }}</h2></div>
+				<div class="block-teaser"><p>{{ block.blockTeaser }}</p></div>
+				<div class="block-description">
+					<p>{{ block.blockDescription }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% case "details" %}
+	<div class="standard-wrapper">
+		{{ block.details }}
+	</div>
+
+	{% case "backgroundImageDivider" %}
+	<div class="divider" style="background-image: url({{ siteUrl }}{{ block.backgroundImage.one().getUrl() }});">
+		<div class="standard-wrapper">
+		<h2 class="divider-title">{{ block.dividerTitle }}</h2>
+		<div class="divider-description">{{ block.dividerDescription }}</div>
+		<div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div> 
+		</div>
+
+	</div>
+
+	{% case "blockTiles" %}
+	<div class="block-inner">
+	{% set entries = block.blockTilesContent.all() %}
+	{% for entry in entries %}
+	<div class="sessions-block">
+			<img class="lazy" src="{{ siteUrl }}{{ entry.sessionTileImage.one().getUrl() }}" data-srcset="{{ siteUrl }}{{ entry.sessionTileImage.one().getUrl() }}" />
+			<div class="inner-text">
+				<h5 class="sessions-title">{{ entry.sessionTileTitle }}</h5>
+				<div class="sessions-description">{{ entry.sessionTileDescription }}</div>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+
+	{% default %}
+
+{% endswitch %}
+{% endfor %}
+
+
+
+
+

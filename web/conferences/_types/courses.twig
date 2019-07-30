@@ -1,0 +1,31 @@
+{% for block in entry.courseDetails.all() %}
+	{% switch block.type %}
+		{% case "courseHeader" %}
+		{% if block.backgroundImage|length %}
+		<section class="small-header" style="background-image: url({{siteUrl}}images/background-images{{ block.backgroundImage.one().getUrl() }});">
+			<div class="inner">
+				<div class="small-header-title">
+					<h1>{{ block.headerTitle }}</h1>
+				</div>
+			</div>
+		</section>
+		{% else %}
+		<section class="small-header--no-image">
+			<div class="inner">
+				<div class="small-header-title">
+					<h1>{{ block.headerTitle }}</h1>
+				</div>
+			</div>
+		</section>
+		{% endif %}
+
+		{% case "details" %}
+		<div class="standard-wrapper">
+			{{ block.details }}
+		</div>
+
+		{% default %}
+		
+	{% endswitch %}
+	
+{% endfor %}

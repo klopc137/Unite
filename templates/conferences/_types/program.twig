@@ -1,0 +1,77 @@
+{% for block in entry.programList.all() %}
+	{% switch block.type %}
+		{% case "programHeader" %}
+		{% if block.backgroundImage|length %}
+		<section class="small-header" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});">
+			<div class="inner">
+				<div class="small-header-title">
+					<h1>{{ block.headerTitle }}</h1>
+				</div>
+			</div>
+		</section>
+		{% else %}
+		<section class="small-header--no-image">
+			<div class="inner">
+				<div class="small-header-title">
+					<h1>{{ block.headerTitle }}</h1>
+				</div>
+			</div>
+		</section>
+		{% endif %}
+
+		
+		{% case "programIntro" %}
+		
+		{% if block.isTextCentered %}
+			{% set textAlign = 'center-align' %}
+		{% else %}
+          {% set textAlign = 'left-align' %}
+		{% endif %}
+		<div class="standard-wrapper intro-block {{ textAlign }}">
+			<div class="intro-title">
+				<h2>{{ block.introTitle }}</h2>
+			</div>
+			<div class="intro-description">
+				<p>{{ block.introDescription }}</p>
+			</div>
+			{% if 	block.linkText|length %}
+			<div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
+			{% endif %}
+		</div>
+		
+
+		
+		{% case "programContent" %}
+			<div class="standard-wrapper tables-row">
+				<div class="column-1">
+				{% for entry in block.programTable.all() | slice(0, 2)  %}
+				    <ul class="no-list-style">
+			    	<li class="list-heading">{{ entry.programHeader}}</li>
+			    	{% for block in entry.programDetails.all() %}
+			    	<li>
+			    		<div class="list-details">{{block.programTimeSlot }}<br/>{{block.programTitle }}</div>
+			    	</li>      
+			    	{% endfor %}
+			    </ul>
+				{% endfor %}
+				</div>
+				<div class="column-2">
+				{% for entry in block.programTable.all() | slice(2, 3)  %}
+				    <ul class="no-list-style">
+			    	<li class="list-heading">{{ entry.programHeader}}</li>
+			    	{% for block in entry.programDetails.all() %}
+			    	<li>
+			    		<div class="list-details">{{block.programTimeSlot }}<br/>{{block.programTitle }}</div>
+			    	</li>      
+			    	{% endfor %}
+			    </ul>
+				{% endfor %}
+				</div>
+			
+			</div>
+
+		{% default %}
+		
+	{% endswitch %}
+	
+{% endfor %}
