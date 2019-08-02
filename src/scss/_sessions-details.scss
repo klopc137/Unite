@@ -76,24 +76,38 @@
 }
 
 //called in media-queries.scss
-/*@mixin sessions-details--sm() {
+@mixin sessions-details--sm() {
+    .sessions-details-block{
+        &.standard-wrapper{
+            padding: 0 !important;
     .session-details-inner{
+
         .left-sidebar{
+            width: 100vw;
+            padding: 0;
             flex-basis: 100%;
             text-align: center;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 114px;
+            position: relative;
+            top: 0;
+            z-index: 10;
             .session_filters{
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                
+                //display: inline-flex;
+                //flex-direction: row;
+                //flex-wrap: wrap;
+                li{
+                    display: inline-flex;
+                    //flex-basis: 50%;
+                }
             }
         }
 
         .right-sidebar{
-            flex-basis: 100%
+            flex-basis: 100%;
+            margin-right: 0;
+            z-index: 5;
+            position: relative;
         }
     }
-}*/
+    }
+    }
+}

@@ -6,9 +6,9 @@
 						<li>
 							<a class="themelink active" data-filter="All" title="All Tracks">General</a>
 						</li>
-						<li>
+						<!--<li>
 							<a class="themelink" data-filter="Destination Marketers" title="Destination Marketers">Destination Marketers</a>
-						</li>
+						</li>-->
 						<li>
 							<a class="themelink" data-filter="Exhibitions" title="Exhibitions">Exhibitions</a>
 						</li>
@@ -95,7 +95,7 @@
 
 		jQuery(".no-sessions").hide();
 
-		$(".session_filters a").click(function(){
+		$(".session_filters a").on('touchstart click', function(){
 
 			jQuery(".session_filters a").removeClass("active");
 			jQuery(this).addClass("active");
@@ -104,16 +104,10 @@
 			jQuery(".individual-session").hide();
 			jQuery(".no-sessions").hide();
 			jQuery(".individual-session[data-track='"+currentSessionType+"'").show();
-			
+			jQuery(".individual-session[data-track='All'").show();
 			if(currentSessionType == 'All'){
 				jQuery(".individual-session").show();
 			}
-			/*if(currentSessionType === 'Destination Marketers' || currentSessionType === 'Technical'){	
-				jQuery(".no-sessions").show();
-			}
-			else {
-				jQuery(".no-sessions").hide();
-			}*/
 			if($('.scheduleday_wrapper').children(':visible').length == 0){
 				jQuery(".no-sessions").show();
 			}

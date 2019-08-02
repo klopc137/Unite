@@ -42,9 +42,11 @@
 	</div>
 	
 	{% case "details" %}
-	<div class="standard-wrapper">
+	
+	<div class="sessions-details-block standard-wrapper">
 		{{ block.details }}
 	</div>
+	
 
 	{% case "backgroundImageDivider" %}
 	<div class="divider" style="background-image: url({{ siteUrl }}{{ block.backgroundImage.one().getUrl() }});">
