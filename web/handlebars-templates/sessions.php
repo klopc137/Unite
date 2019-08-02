@@ -35,7 +35,7 @@
 		<ul class="scheduleday_wrapper themeborder no-list-style">
 			{{#each ./Sessions}}
 			
-			{{#if TrackDescription.length}}
+			
 			<li class="themeborder individual-session accordion-panel" data-track="{{TrackDescription}}">
 				
 				<div class="session_content_wrapper expandable accordion">
@@ -61,15 +61,25 @@
 							<span class="ti-bookmark"></span>
 							<div class="session_title_item">{{TrackDescription}}</div>
 						</div>
+						
+						
+						<div class="session_topic_list">
+							<h6>Related Industries: </h6>
+							{{#each Topics}}
+							<span class="session_topic_industry">{{Description}}</span>
+							{{/each}}
+						</div>
+						
+						
 					</div>
 				</div>
 
 			</li>
-			{{else}}
 			
-				<li class="themeborder individual-session accordion-panel no-sessions" style="color: #ff2d55; margin: auto; text-align: center;"><h3>No sessions yet but check back soon.</h3></li>
 			
-			{{/if}}
+				<!--<li class="themeborder individual-session accordion-panel no-sessions" style="color: #ff2d55; margin: auto; text-align: center;"><h3>No sessions yet but check back soon.</h3></li>-->
+			
+			
 			{{/each}}
 		</ul>
 		
@@ -95,7 +105,8 @@
 
 		jQuery(".no-sessions").hide();
 
-		$(".session_filters a").on('touchstart click', function(){
+		$(".session_filters a").on('touchstart click', function(e){
+			e.preventDefault();
 
 			jQuery(".session_filters a").removeClass("active");
 			jQuery(this).addClass("active");
@@ -103,17 +114,17 @@
 			individualSession = jQuery('.individual-session').attr("data-track");
 			jQuery(".individual-session").hide();
 			jQuery(".no-sessions").hide();
-			jQuery(".individual-session[data-track='"+currentSessionType+"'").show();
-			jQuery(".individual-session[data-track='All'").show();
+			jQuery(".individual-session[data-track='"+currentSessionType+"'").fadeIn();
+			jQuery(".individual-session[data-track='All'").fadeIn();
 			if(currentSessionType == 'All'){
-				jQuery(".individual-session").show();
+				jQuery(".individual-session").fadeIn();
 			}
-			if($('.scheduleday_wrapper').children(':visible').length == 0){
+			/*if($('.scheduleday_wrapper').children(':visible').length == 0){
 				jQuery(".no-sessions").show();
 			}
 			else{
 				jQuery(".no-sessions").hide();
-			}
+			}*/
 
 		});
 

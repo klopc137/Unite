@@ -44,6 +44,7 @@
 		-webkit-box-shadow: 0 1px 30px rgba(0,0,0,.1);
     	-moz-box-shadow: 0 1px 30px rgba(0,0,0,.1);
     	box-shadow: 0 1px 30px rgba(0,0,0,.1);
+        height: 100%;
     	.accordion-panel{
     		cursor: pointer;
     		border-bottom: 1px solid #dce0e0;
@@ -70,6 +71,26 @@
     			.session_excerpt{
     				margin: 15px 0;
     			}
+                .session_title_list{
+                    margin-bottom: 15px;
+
+                    .session_title_item{
+                        color: $color-pink;
+                    }
+                }
+                .session_topic_list{
+                    .session_topic_industry{
+                        &:after{
+                            content: ',';
+                        }
+
+                        &:last-child{
+                            &:after{
+                                content: '';
+                            }
+                        }
+                    }
+                }
     		}
     	}
 	}
