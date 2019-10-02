@@ -25,77 +25,70 @@
 	</div>
 
 	{% case "prices" %}
-			<div class="price-section standard-wrapper">
-			{% set priceEntry = block.pricesTable.all() %}
-			{% for entry in priceEntry %}
-			{% if entry.isFeatured %}
-				<ul class="price-table featured-table">
-					<li class="featured-row">Now Open</li>	
-			    	<li class="title-row"><h3 class="list-heading">{{ entry.tableHeading}}</h3>
-			    		<div class="ticket-description">{{ entry.tableStatus }}</div>
-			    	</li>
-			    	<li>{{entry.tableListItems}}</li>
-			    	<li class="price">{{entry.tablePricing}}</li>
-			    	<div><a href="{{ entry.linkNameUrl }}" class="button-block">{{ entry.linkName }}</a></div>
-			    </ul>
-			   
-			{% else %}
-			    <ul class="price-table">
-			    	<li class="empty-row"></li>
-			    	<li class="title-row"><h3 class="list-heading">{{ entry.tableHeading}}</h3>
-			    		<div class="ticket-description">{{ entry.tableStatus }}</div>
-			    	</li>
-			    	<li>{{entry.tableListItems}}</li>
-			    	<li class="price">{{entry.tablePricing}}</li>
-			    </ul>
-			{% endif %}   
-			{% endfor %}
-			</div>
-	{% case "horizontalTable" %}
-	<div class="standard-wrapper">
-		{% if block.priceListTable|length %}
-			<table style="border: 1px solid #000000; width: 100%;">
-				<tr>
-					<th></th>
-					<th>Individuals</th>
-					<th>Group 4+</th>
-					<th>Group 8+</th>
-				</tr>
-				{% for row in block.priceListTable %}
-				<tr>
-				   	<td>{{ row.registration }}</td> <td>{{ row.individuals }}</td> <td>{{ row.group4 }}</td> <td>{{ row.group8 }}</td>
-				</tr>
-				{% endfor %}
+	<div class="price-section standard-wrapper">
+	{% set priceEntry = block.pricesTable.all() %}
+	
+	{% if block.isHorizontalTable %}
+		<div class="horizontal-price-table" >
+			<table cellspacing="2">
+				<tbody>
+					<tr class="column-title">
+						<td></td>
+						<td class="column-heading">Individuals</td>
+						<td class="column-heading">Group 4+</td>
+						<td class="column-heading">Group 8+</td>
+					</tr>
+					{% for entry in priceEntry %}
+					{% if entry.isFeatured %}
+					{% set displayButton = 'featuredButton' %}
+					{% set rowActive = "row-active" %}
+					{% set rowColor = "white-background" %}
+					{% else %}
+					{% set displayButton = 'noButton' %}
+					{% set rowActive = "row-not-active" %}
+					{% set rowColor = "price-row" %}
+					{% endif %}
+					<tr class="price-row {{ rowActive }}">
+						<td class="main-column"><span class="heading">{{ entry.tableHeading }}</span><br><span class="status">{{entry.tableStatus}}</span><br><span class="{{ displayButton }}"><a href="{{ entry.linkNameUrl }}" class="button-block">{{ entry.linkName }}</a></span></td>
+						<td class="price-data {{ rowColor }}"><span class="mobile-column-heading column-heading">Individuals</span>{{ entry.individualsPrice }}</td>
+						<td class="price-data {{ rowColor }}"><span class="mobile-column-heading column-heading">Group 4+</span>{{ entry.group4Price }}</td>
+						<td class="price-data {{ rowColor }}"><span class="mobile-column-heading column-heading">Group 8+</span>{{ entry.group8Price }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
 			</table>
-		{% endif %}
+			
+		</div>
 		
+	
+	{% else %}
+	{% for entry in priceEntry %}
+		{% if entry.isFeatured %}
+		<ul class="price-table featured-table">
+			<li class="featured-row">Now Open</li>	
+			<li class="title-row"><h3 class="list-heading">{{ entry.tableHeading}}</h3>
+			    <div class="ticket-description">{{ entry.tableStatus }}</div>
+			</li>
+			<li>{{entry.tableListItems}}</li>
+			<li class="price">{{entry.tablePricing}}</li>
+			<div><a href="{{ entry.linkNameUrl }}" class="button-block">{{ entry.linkName }}</a></div>
+		</ul>
+			   
+		{% else %}
+		<ul class="price-table">
+			<li class="empty-row"></li>
+			<li class="title-row"><h3 class="list-heading">{{ entry.tableHeading}}</h3>
+			   	<div class="ticket-description">{{ entry.tableStatus }}</div>
+			</li>
+			<li>{{entry.tableListItems}}</li>
+			<li class="price">{{entry.tablePricing}}</li>
+		</ul>
+		{% endif %}
+	 
+	{% endfor %}
+{% endif %} 
 	</div>
 
-	{% case "horizontalSuperTable" %}
-	<div class="standard-wrapper">
-		
-			<table style="border: 1px solid #000000; width: 100%;">
-				<tr>
-					<th></th>
-					<th>Individuals</th>
-					<th>Group 4+</th>
-					<th>Group 8+</th>
-				</tr>
-				{% for row in block.priceListSuperTable.all() %}
-				<tr>
-    				{% for block in row.matrix.all() %}
-        				{% if block.type == 'ticketSaleDates' %}
-        					{% for block in ticketType %}
-        					    <div>{{ block.ticketTypeName }}</div>
-        					    <div>{{ block.ticketTypeDate }}</div>
-        					{% endfor %}	
-        				{% endif %}
-    				{% endfor %}
-    			</tr>
-				{% endfor %}
-			</table>
-		
-	</div>
 	<div class="copy-section standard-wrapper">
 	{% case "pricingCopy" %}
 	<div class="pricing-copy">

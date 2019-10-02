@@ -108,9 +108,13 @@
             padding: 0;
             flex-basis: 100%;
             text-align: center;
-            position: relative;
-            top: 0;
+            //position: relative;
+            top: 85px;
             z-index: 10;
+            background-color: #ffffff;
+            -webkit-box-shadow: 0 1px 30px rgba(0,0,0,.1);
+            -moz-box-shadow: 0 1px 30px rgba(0,0,0,.1);
+            box-shadow: 0 1px 30px rgba(0,0,0,.1);
             .session_filters{
                 //display: inline-flex;
                 //flex-direction: row;

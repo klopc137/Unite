@@ -9,7 +9,7 @@
 }
 
 .page-copy {
-  font-family: 'Poppins';
+  font-family: 'Roboto', sans-serif;
   font-size: 17px;
   text-align: left;
   padding: 75px 0 75px 0;
@@ -57,7 +57,10 @@
       }
       
     }
-
+    .cta-button{
+      width: 33%;
+      text-align: center;
+    } 
   }
 
 }
@@ -68,7 +71,7 @@
 
 /******Styles for landing page with video******/
 .page-copy-video {
-  font-family: 'Poppins';
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   background-position: center bottom;
   background-size: cover;
@@ -120,6 +123,23 @@
       .page-copy-title{
         font-size: 22px;
       }
+
+      .cta-button{
+        width: 50%;
+        text-align: center;
+      } 
+    }
+  }
+}
+
+@mixin page-copy--xsm() {
+  .page-copy{
+
+    .page-copy-text{
+      .cta-button{
+        width: 100%;
+        text-align: center;
+      } 
     }
   }
 }

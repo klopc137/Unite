@@ -114,8 +114,8 @@
 			individualSession = jQuery('.individual-session').attr("data-track");
 			jQuery(".individual-session").hide();
 			jQuery(".no-sessions").hide();
-			jQuery(".individual-session[data-track='"+currentSessionType+"'").fadeIn();
-			jQuery(".individual-session[data-track='All'").fadeIn();
+			jQuery(".individual-session[data-track='"+currentSessionType+"'" + "]").fadeIn();
+			jQuery(".individual-session[data-track='All'" + "]").fadeIn();
 			if(currentSessionType == 'All'){
 				jQuery(".individual-session").fadeIn();
 			}

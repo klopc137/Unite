@@ -14,7 +14,7 @@
   @include side-block--sm();
   @include page-copy--sm();
   @include side-image--sm();
-  //@include divider--sm(); 
+  @include divider--sm(); 
   @include speakers-landing--sm(); 
   @include sessions-landing--sm(); 
   @include sessions-details--sm(); 
@@ -22,4 +22,11 @@
   @include travel--sm(); 
   @include thank-you--sm(); 
   @include slider--sm(); 
+}
+
+// extra-small screen size (xsm)
+@media (max-width: 480px) {
+  @include speakers-landing--xsm();
+  @include page-copy--xsm();
+  @include columned-block--xsm();
 }

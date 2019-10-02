@@ -5,6 +5,7 @@
 {% set mainEntry = craft.entries.slug(craft.app.request.getSegment(1)).one() %}
 
 {% if mainEntry %} 
+{% set menuLogo = mainEntry.menuLogo %}
 {% set academyLink = craft.entries.descendantOf(mainEntry).slug('academy').one() %}
 {% set navLink = craft.entries.descendantOf(mainEntry).mainLevelNavigation('1').all() %}
 {% set registerLink = mainEntry.registerLink %}
@@ -14,7 +15,9 @@
 
 <nav class="navbar navbar-expand-lg main-menu">
 	<div class="standard-wrapper">
-		<div class="navbar-brand logo logo-white visible"><a href="https://conference.ungerboeck.com"><img src="{{siteUrl}}images/logos/UUGC_2019_year-logo_W.png"/></a></div>
+		{% if menuLogo|length %}
+		<div class="navbar-brand logo logo-white visible"><a href="https://conference.ungerboeck.com"><img src="{{siteUrl}}{{menuLogo.one().getUrl()}}"/></a></div>
+		{% endif %}
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="myFunction(this)">
 			<span class="navbar-toggler-icon">
 			<div class="bar1"></div>

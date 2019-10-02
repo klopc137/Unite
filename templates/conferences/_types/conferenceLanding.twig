@@ -54,22 +54,40 @@
 </section>
 {% for block in entry.bodyContent.all() %}
   		{% switch block.type %}
-  	
+  	    
   			{% case "pageCopy" %}
-        <section class="front">
-        <div class="bg-image-divider" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});"></div>
-        <div class="page-copy large-padding standard-wrapper left-align">
-          <div class="page-copy-text">
-            <div>
-              <h1 class="page-copy-title">{{ block.copyHeader }}</h1>
-              <div class="page-copy-description">
-                <div>{{ block.copyDescription }}</div>
-                <div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
-              </div>    
+          <section class="front">
+          <div class="bg-image-divider" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});"></div>
+          <div class="page-copy large-padding standard-wrapper left-align">
+            <div class="page-copy-text">
+              <div>
+                <h1 class="page-copy-title">{{ block.copyHeader }}</h1>
+                <div class="page-copy-description">
+                  <div>{{ block.copyDescription }}</div>
+                  
+                </div>
+                {% if block.speakerList|length %}
+                <h1 class="page-copy-title purple-text">Customer Speakers</h1>
+                {% set speakersEntry = block.speakerList.all() %}
+                <div class="speaker-content">
+                {% for entry in speakersEntry %}
+                
+                <div class="speaker-info">
+                  <div class="speaker-image"><img class="lazy" src="{{siteUrl}}{{ entry.speakerImage.one().getUrl() }}" data-srcset="{{siteUrl}}{{ entry.speakerImage.one().getUrl() }}" /></div>
+                  <div class="speaker-details">
+                  <div class="speaker-name">{{ entry.speakerName }}</div>
+                  <div class="speaker-job">{{ entry.speakerCompany }}</div>
+                </div>
+                </div>
+                
+                {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+              <div class="cta-button"><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
             </div>
-          </div> 
-        </div>
-      </section>
+          </div>
+        </section>
       
   		  {% case "columnedText" %}
         <div class="large-padding front">

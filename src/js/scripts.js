@@ -386,11 +386,11 @@ if ((".course-results-emea").length) {
 }
 
 if ((".ungerboeck-sessions").length) {
-	templateLoad("/handlebars-templates/sessions.php", "https://ds.ungerboeck.com/digitalSignage/api/Sessions/Get?orgCode=10&eventId=359441&rooms=&date=&rooms=&date=", ".ungerboeck-sessions")
+	templateLoad("https://conference.ungerboeck.com/unite/handlebars-templates/sessions.php", "https://ds.ungerboeck.com/digitalSignage/api/Sessions/Get?orgCode=10&eventId=359441&rooms=&date=&rooms=&date=", ".ungerboeck-sessions")
 }
 
 if ((".ungerboeck-sessions-apac").length) {
-	templateLoad("https://conference.ungerboeck.com/unite/handlebars-templates/sessions.php", "https://ds.ungerboeck.com/digitalSignage/api/Sessions/Get?orgCode=10&eventId=350367&Usage711%20710%712%715%PE", ".ungerboeck-sessions-apac")
+	templateLoad("https://conference.ungerboeck.com/unite/handlebars-templates/sessions.php", "https://ds.ungerboeck.com/digitalSignage/api/Sessions/Get?orgCode=10&eventId=363419&Usage710%20711%712%PE", ".ungerboeck-sessions-apac")
 }
 
 if ((".ungerboeck-sessions-emea").length) {

@@ -1,9 +1,10 @@
 {
   "require": {
-    "craftcms/cms": "3.2.7",
+    "craftcms/cms": "3.3.6",
     "craftcms/contact-form": "2.2.5",
-    "craftcms/redactor": "2.3.3.2",
-    "verbb/super-table": "2.2.1",
+    "craftcms/redactor": "2.4.0",
+    "verbb/image-resizer": "2.0.6",
+    "verbb/super-table": "2.3.0",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {

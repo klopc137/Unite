@@ -39,7 +39,8 @@
     .logo{
       text-align: center;
       img {
-        max-width: 500px;
+        //max-width: 500px;
+        max-width: 60%;
         height: auto;
         //margin-bottom: 40px;
       }
@@ -53,7 +54,8 @@
           border: 1px solid #ffffff;
           align-self: center;
           text-align: center;
-          margin: 20px auto;
+          margin: 0 auto;
+          //margin: 20px auto;
         }
     }
     .intro{
@@ -100,7 +102,7 @@
 
         
         .dates {
-          font-family: 'Poppins';
+          font-family: 'Roboto';
           color: rgba(255, 255, 255, 0.8);
           font-size: 87.5%;
           text-shadow: none;

@@ -29,7 +29,7 @@
     }
 
     }
-	height: 420px;
+	height: 500px;
 	width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,6 +79,8 @@
 //called in media-queries.scss
 @mixin small-header--sm() {
     .small-header{
+        //background-position: left;
+        height: 420px;
         .inner{
             .small-header-title{
                 padding: 0 10px;

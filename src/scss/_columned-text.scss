@@ -32,10 +32,15 @@
 	.columned-text-title{
 		font-size: 22px;
 	}
+	
+}
+
+@mixin columned-block--xsm() {
 	.columned-row{
 		//flex-direction: column;
 		.columned-block{
-			margin: 20px 20px 20px 0 ;
+			margin: 20px auto;
+			flex: auto;
 		}
 	}
 }

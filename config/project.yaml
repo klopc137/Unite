@@ -1,4 +1,4 @@
-dateModified: 1564425291
+dateModified: 1568217334
 email:
   fromEmail: collin.klopstein@ungerboeck.com
   fromName: 'unite craft'
@@ -20,6 +20,8 @@ fieldGroups:
     name: Speakers
   471f850e-f8b3-4a70-acf2-5da64b2c25d4:
     name: Program
+  5a91d2ac-78fe-45ba-8269-4ef2f5f89767:
+    name: 'Customer Speakers'
   5f012e20-9020-46b1-b272-ed5c4909f194:
     name: Register
   6107753b-950a-4e99-b7f4-ee165b776ba3:
@@ -101,6 +103,23 @@ fields:
   0a554128-fea9-4a51-91ee-c846206f020f:
     name: 'Link Name Url'
     handle: linkNameUrl
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 0e1bfd39-2d95-424d-9813-e4cba07354b2
+  0ae1c108-1bd9-4516-81aa-c842ba803c3b:
+    name: 'group 8 Price'
+    handle: group8Price
     instructions: ''
     searchable: true
     translationMethod: none
@@ -237,9 +256,26 @@ fields:
       minBlocks: ''
       maxBlocks: ''
       contentTable: '{{%matrixcontent_bodycontent}}'
-      localizeBlocks: false
+      propagationMethod: all
     contentColumnType: string
     fieldGroup: 252f7c41-eb35-4a6e-a33c-80246745635d
+  36c956d2-45cb-439e-ad27-cd497edd6ae6:
+    name: 'Individuals Price'
+    handle: individualsPrice
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 0e1bfd39-2d95-424d-9813-e4cba07354b2
   3afe9c2a-35b3-4076-a21a-f4487799ea30:
     name: 'Conference Dates'
     handle: conferenceDates
@@ -535,6 +571,40 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: db4f080a-f3bb-40d6-a821-b0a6e82c5b64
+  74997c87-9aab-416b-9a53-56cbca0b3146:
+    name: 'Speaker Company'
+    handle: speakerCompany
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 5a91d2ac-78fe-45ba-8269-4ef2f5f89767
+  79608b7d-0eeb-4d0e-b7a1-e12798fbbece:
+    name: 'group 4 Price'
+    handle: group4Price
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 0e1bfd39-2d95-424d-9813-e4cba07354b2
   876cfcf1-e4af-4cb9-acdd-9ec7cf40e9cd:
     name: 'Register Background Image'
     handle: registerBackgroundImage
@@ -760,6 +830,33 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  b1df267e-b9dd-4e0c-914f-8d870dd0fd03:
+    name: 'Menu Logo'
+    handle: menuLogo
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Select a logo to use in the top navigation menu'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 252f7c41-eb35-4a6e-a33c-80246745635d
   b35cd306-e60f-456d-8e56-79dd94a34fb5:
     name: 'Program Details'
     handle: programDetails
@@ -850,8 +947,8 @@ fields:
     settings:
       minBlocks: ''
       maxBlocks: ''
-      contentTable: '{{%matrixcontent_speakerscontent_1}}'
-      localizeBlocks: false
+      contentTable: '{{%matrixcontent_speakerscontent}}'
+      propagationMethod: all
     contentColumnType: string
     fieldGroup: 392ae219-04c6-4a42-a381-eaeae7a6d307
   c7111f00-50d0-4e5d-be9c-7278c1839f77:
@@ -947,6 +1044,23 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 0e1bfd39-2d95-424d-9813-e4cba07354b2
+  e6e6e753-7381-4eb7-8f7a-3130924ca9cd:
+    name: 'Speaker Name'
+    handle: speakerName
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 5a91d2ac-78fe-45ba-8269-4ef2f5f89767
   f2fcb116-c498-45a8-9e5f-fedba5e58054:
     name: 'FAQ Content'
     handle: faqContent
@@ -994,6 +1108,33 @@ fields:
       localizeBlocks: false
     contentColumnType: string
     fieldGroup: f3687dc2-ae3a-4f6d-b2ab-35e60388fff2
+  fb9956c3-e5f8-4d68-aabf-48f5fa4acfc4:
+    name: 'Speaker Image'
+    handle: speakerImage
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:4dd20ca0-f97d-4184-8b7f-24715198b991'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 5a91d2ac-78fe-45ba-8269-4ef2f5f89767
   fbc8aaba-c322-4fab-828c-03d81b6963fe:
     name: 'Slider Image'
     handle: sliderImage
@@ -1155,88 +1296,6 @@ matrixBlockTypes:
               f84a2487-df6c-4cad-bde4-fedd64246859:
                 required: false
                 sortOrder: 5
-  1b7fba23-358a-43d8-8a37-53b2f28edaf0:
-    field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
-    name: 'Customer Presenters'
-    handle: customerPresenters
-    sortOrder: 3
-    fields:
-      f3c8bae1-d180-43da-a9ee-0a682490823c:
-        name: 'Presenter Image'
-        handle: presenterImage
-        instructions: ''
-        searchable: true
-        translationMethod: site
-        translationKeyFormat: null
-        type: craft\fields\Assets
-        settings:
-          useSingleFolder: ''
-          defaultUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
-          defaultUploadLocationSubpath: ''
-          singleUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
-          singleUploadLocationSubpath: ''
-          restrictFiles: '1'
-          allowedKinds:
-            - image
-          sources: '*'
-          source: null
-          targetSiteId: null
-          viewMode: list
-          limit: '1'
-          selectionLabel: ''
-          localizeRelations: false
-        contentColumnType: string
-        fieldGroup: null
-      f84e8d1e-4228-434f-8ae7-34eecef82e32:
-        name: 'Presenter Name'
-        handle: presenterName
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      fb6b9342-7d83-4c91-92b7-f5cd128970cb:
-        name: 'Presenter Company'
-        handle: presenterCompany
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-    fieldLayouts:
-      b2ddb64a-0059-431c-949a-60b9524fba59:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              f3c8bae1-d180-43da-a9ee-0a682490823c:
-                required: false
-                sortOrder: 1
-              f84e8d1e-4228-434f-8ae7-34eecef82e32:
-                required: false
-                sortOrder: 2
-              fb6b9342-7d83-4c91-92b7-f5cd128970cb:
-                required: false
-                sortOrder: 3
   25b13d7f-6546-41fa-b78b-9c09cac984e9:
     field: 2a1f04c6-e625-42b4-9bc5-77f393c6ef0e
     name: 'Thank You Header'
@@ -1663,6 +1722,102 @@ matrixBlockTypes:
               0ca88574-7465-4e7d-ab26-412924cf2511:
                 required: false
                 sortOrder: 1
+  43c04cf1-9e1d-4af6-bded-6c3dcd1a390b:
+    field: c70f5157-43e4-4203-a4d5-af2189f8ef66
+    name: SpeakersList
+    handle: speakersList
+    sortOrder: 3
+    fields:
+      3bf06613-e8bf-4838-b965-7c58de68c4a6:
+        name: 'Right Image'
+        handle: rightImage
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:9c0c89dd-d791-473c-ada3-ffaf5c296287'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      e0cd15fc-e5f3-4e01-96d8-1231cef83e38:
+        name: 'Left Image'
+        handle: leftImage
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:9c0c89dd-d791-473c-ada3-ffaf5c296287'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:1e7a59a0-b341-4c60-a38a-49d6bd92fd43'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      ecbcd514-32e1-48c7-9f69-2d2d1c922c39:
+        name: Speakers
+        handle: speakers
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:fd80fec9-3fd1-49c4-b5d9-f0fff9a6518c'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: ''
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      780fef36-7c4e-4aa8-abdc-53589bc45a31:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              3bf06613-e8bf-4838-b965-7c58de68c4a6:
+                required: false
+                sortOrder: 3
+              e0cd15fc-e5f3-4e01-96d8-1231cef83e38:
+                required: false
+                sortOrder: 1
+              ecbcd514-32e1-48c7-9f69-2d2d1c922c39:
+                required: false
+                sortOrder: 2
   45bcecd5-78ad-4390-b252-f8ddc708b67a:
     field: c7111f00-50d0-4e5d-be9c-7278c1839f77
     name: 'Pricing Intro'
@@ -2173,6 +2328,7 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
       a96c9800-068d-42d4-84cd-c5c9058d4708:
@@ -2420,59 +2576,6 @@ matrixBlockTypes:
               7f1c47a1-a4ac-4d94-a817-cd5edef3c1ff:
                 required: false
                 sortOrder: 1
-  76741afb-869c-47a5-b47a-c34e413a3b67:
-    field: db7fe83c-3aff-42af-aede-1e5fc55df3c0
-    name: 'Ticket Type'
-    handle: ticketType
-    sortOrder: 1
-    fields:
-      3c35f0dd-245a-4c04-827c-a581acce76b1:
-        name: 'Ticket Type Name'
-        handle: ticketTypeName
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      c883c613-cae7-4964-b769-870ccb0d7607:
-        name: 'Ticket Type Date'
-        handle: ticketTypeDate
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-    fieldLayouts:
-      ad368469-67d4-483b-9b09-45b102861733:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              3c35f0dd-245a-4c04-827c-a581acce76b1:
-                required: false
-                sortOrder: 1
-              c883c613-cae7-4964-b769-870ccb0d7607:
-                required: false
-                sortOrder: 2
   81504440-daa3-4e27-ad4c-79ccb88c15c8:
     field: f2fcb116-c498-45a8-9e5f-fedba5e58054
     name: questionsSectionTitle
@@ -2921,63 +3024,11 @@ matrixBlockTypes:
               da978872-3429-4b24-8cb3-58e9186b2a2f:
                 required: false
                 sortOrder: 1
-  a53403a7-3766-410d-8178-1db6ffc9c92a:
-    field: c7111f00-50d0-4e5d-be9c-7278c1839f77
-    name: 'horizontal table'
-    handle: horizontalTable
-    sortOrder: 7
-    fields:
-      6563ed3d-9228-4966-b9aa-631813596db9:
-        name: 'Price List Table'
-        handle: priceListTable
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Table
-        settings:
-          addRowLabel: 'Add a row'
-          maxRows: ''
-          minRows: ''
-          columns:
-            col1:
-              heading: Registration
-              handle: registration
-              width: 25%
-              type: multiline
-            col2:
-              heading: Individuals
-              handle: individuals
-              width: 25%
-              type: multiline
-            col3:
-              heading: 'Group 4+'
-              handle: group4
-              width: 25%
-              type: multiline
-            col4:
-              heading: 'Group 8+'
-              handle: group8
-              width: 25%
-              type: multiline
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-    fieldLayouts:
-      efda008c-8436-48e8-9d98-461ebf0f8c6a:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              6563ed3d-9228-4966-b9aa-631813596db9:
-                required: false
-                sortOrder: 1
   a765534e-cc4c-4675-82bb-aee10db2d29e:
     field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
     name: 'Image Slider'
     handle: imageSlider
-    sortOrder: 8
+    sortOrder: 7
     fields:
       47735328-90ef-4d05-8f41-cbdfc2a63605:
         name: Images
@@ -2996,6 +3047,7 @@ matrixBlockTypes:
           limit: ''
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
       57e625f3-a44d-4c61-be3c-563b4a147004:
@@ -3167,6 +3219,7 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
       fc1d740e-7366-4cf6-ac2e-67d69ad2c19e:
@@ -3215,7 +3268,7 @@ matrixBlockTypes:
     field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
     name: 'Side Image'
     handle: sideImage
-    sortOrder: 4
+    sortOrder: 3
     fields:
       4824752f-bff0-4379-9101-d22fb4d1a014:
         name: Button
@@ -3279,6 +3332,7 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
       bb3b77e3-822e-482e-a486-7af953cc5bdb:
@@ -3352,49 +3406,6 @@ matrixBlockTypes:
               dc4b7029-6556-4e01-9946-9425adc7dd91:
                 required: false
                 sortOrder: 3
-  b1119c21-d75d-4242-aa60-6801ad8b1307:
-    field: c7111f00-50d0-4e5d-be9c-7278c1839f77
-    name: 'horizontal super table'
-    handle: horizontalSuperTable
-    sortOrder: 8
-    fields:
-      47a12a75-d16f-45cd-bc32-1c7dd05f1b0c:
-        name: 'Price List Super Table'
-        handle: priceListSuperTable
-        instructions: ''
-        searchable: true
-        translationMethod: site
-        translationKeyFormat: null
-        type: verbb\supertable\fields\SuperTableField
-        settings:
-          minRows: ''
-          maxRows: ''
-          contentTable: '{{%stc_52_pricelistsupertable}}'
-          propagationMethod: all
-          staticField: ''
-          columns:
-            220:
-              width: ''
-            218:
-              width: ''
-            219:
-              width: ''
-            223:
-              width: ''
-          fieldLayout: matrix
-          selectionLabel: ''
-        contentColumnType: string
-        fieldGroup: null
-    fieldLayouts:
-      b2852cac-5603-4f62-b5e8-dc64556eaf30:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              47a12a75-d16f-45cd-bc32-1c7dd05f1b0c:
-                required: false
-                sortOrder: 1
   b1351510-5592-4ef5-a26e-65d569001ee9:
     field: 63231bd0-ad2b-49c0-8bfb-ea101e859cd1
     name: 'Hotel Intro'
@@ -3455,7 +3466,7 @@ matrixBlockTypes:
     field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
     name: 'Side Block'
     handle: sideBlock
-    sortOrder: 6
+    sortOrder: 5
     fields:
       0e069425-df1f-4f9a-b6b1-4c37dd2c54d8:
         name: 'Is White Background'
@@ -3494,6 +3505,7 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
       4c62c871-72cc-454b-965d-36034e31d5bf:
@@ -3963,7 +3975,7 @@ matrixBlockTypes:
     field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
     name: 'Colored Divider'
     handle: coloredDivider
-    sortOrder: 5
+    sortOrder: 4
     fields:
       56e110b7-c3bf-4904-9c20-f8e887ef7ba0:
         name: 'Background Image'
@@ -3990,6 +4002,7 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
       5e8ba1ec-ecde-4b9c-955b-f61ba58601cc:
@@ -4349,6 +4362,26 @@ matrixBlockTypes:
     handle: pageCopy
     sortOrder: 2
     fields:
+      935f00e7-669e-4e18-9d9f-37a341f011f9:
+        name: 'Speaker List'
+        handle: speakerList
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:fd80fec9-3fd1-49c4-b5d9-f0fff9a6518c'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '6'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
       9bf3d8e7-a4be-4bce-9282-874948d8f96d:
         name: 'Strong Word'
         handle: strongWord
@@ -4496,6 +4529,7 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
     fieldLayouts:
@@ -4505,6 +4539,9 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              935f00e7-669e-4e18-9d9f-37a341f011f9:
+                required: false
+                sortOrder: 5
               9bf3d8e7-a4be-4bce-9282-874948d8f96d:
                 required: false
                 sortOrder: 2
@@ -4513,19 +4550,19 @@ matrixBlockTypes:
                 sortOrder: 3
               b63e8526-54c9-4607-b3ce-821c23e53916:
                 required: false
-                sortOrder: 5
+                sortOrder: 6
               b76debb7-0a0f-4a8a-990c-bd74fd496eed:
                 required: true
                 sortOrder: 1
               c69cec51-416f-4828-8160-7115ef1a8efa:
                 required: false
-                sortOrder: 8
+                sortOrder: 9
               d1b978e7-9a72-4134-86d9-180e71b3628f:
                 required: false
-                sortOrder: 7
+                sortOrder: 8
               d4b5e693-8531-4feb-a406-23bd179e2c40:
                 required: false
-                sortOrder: 6
+                sortOrder: 7
               da5c96f4-6137-4282-9aff-6dcada81cea9:
                 required: false
                 sortOrder: 4
@@ -4713,6 +4750,18 @@ matrixBlockTypes:
     handle: prices
     sortOrder: 3
     fields:
+      6391ae5a-d09d-43b4-a2fd-eec4ce906e1f:
+        name: 'is Horizontal Table'
+        handle: isHorizontalTable
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Lightswitch
+        settings:
+          default: ''
+        contentColumnType: boolean
+        fieldGroup: null
       af05db4b-74f9-4ff6-8cc2-1887d55423d2:
         name: 'Prices Table'
         handle: pricesTable
@@ -4740,6 +4789,9 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              6391ae5a-d09d-43b4-a2fd-eec4ce906e1f:
+                required: false
+                sortOrder: 2
               af05db4b-74f9-4ff6-8cc2-1887d55423d2:
                 required: false
                 sortOrder: 1
@@ -4888,7 +4940,7 @@ matrixBlockTypes:
     field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
     name: 'Callout Block'
     handle: calloutBlock
-    sortOrder: 9
+    sortOrder: 8
     fields:
       5ab32f22-5b79-46ab-aad9-012514d9ee72:
         name: 'Callout Entries'
@@ -4906,6 +4958,7 @@ matrixBlockTypes:
           limit: ''
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
     fieldLayouts:
@@ -4922,7 +4975,7 @@ matrixBlockTypes:
     field: 364d1068-bd9f-4301-86dd-51ab3a8bde51
     name: 'Columned Text'
     handle: columnedText
-    sortOrder: 7
+    sortOrder: 6
     fields:
       1d2ae348-efc2-4243-bdaa-4e2cfdf8ff8d:
         name: 'Block Title'
@@ -4958,6 +5011,7 @@ matrixBlockTypes:
           limit: ''
           selectionLabel: ''
           localizeRelations: false
+          validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
     fieldLayouts:
@@ -4992,6 +5046,59 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.2.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      enabled: '1'
+      imageWidth: '2048'
+      imageHeight: '2048'
+      imageQuality: '100'
+      assetSourceSettings:
+        1:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        3:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        5:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        4:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        2:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        6:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        7:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        8:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+      skipLarger: '1'
+      nonDestructiveResize: '1'
+      nonDestructiveCrop: false
 sections:
   2460ac73-32a1-43a2-a3d9-bf0a31f594de:
     name: Programs
@@ -5055,9 +5162,18 @@ sections:
                   0a554128-fea9-4a51-91ee-c846206f020f:
                     required: false
                     sortOrder: 6
+                  0ae1c108-1bd9-4516-81aa-c842ba803c3b:
+                    required: false
+                    sortOrder: 10
+                  36c956d2-45cb-439e-ad27-cd497edd6ae6:
+                    required: false
+                    sortOrder: 8
                   543a9484-289d-43c7-a382-55c12518b29e:
                     required: false
                     sortOrder: 7
+                  79608b7d-0eeb-4d0e-b7a1-e12798fbbece:
+                    required: false
+                    sortOrder: 9
                   89cf82e1-7dc2-4eb9-88cc-f4b9e646ffc8:
                     required: false
                     sortOrder: 3
@@ -5485,7 +5601,7 @@ sections:
                     sortOrder: 12
                   5b5c4e9a-93a0-42b2-a3ce-0ded668e74fb:
                     required: false
-                    sortOrder: 14
+                    sortOrder: 15
                   6c14480b-7937-473d-9313-aafb10954a86:
                     required: false
                     sortOrder: 5
@@ -5497,10 +5613,13 @@ sections:
                     sortOrder: 7
                   a5754afb-2f2f-46e6-964c-2e2515c59dd5:
                     required: false
-                    sortOrder: 15
+                    sortOrder: 16
                   b105de38-7ff7-441b-b274-27facea438fc:
                     required: false
                     sortOrder: 2
+                  b1df267e-b9dd-4e0c-914f-8d870dd0fd03:
+                    required: false
+                    sortOrder: 14
                   be973695-528a-4e3f-aeea-55ac0ae0443a:
                     required: false
                     sortOrder: 1
@@ -5679,6 +5798,42 @@ sections:
                     required: false
                     sortOrder: 2
     propagationMethod: all
+  fd80fec9-3fd1-49c4-b5d9-f0fff9a6518c:
+    name: 'Speakers Content'
+    handle: speakersContent
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      39e3e5d3-49fa-48ee-8bad-58d59c15d392:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'speakers-content/{slug}'
+        template: ''
+    entryTypes:
+      05eeacac-9c96-406d-a58e-442a1a3f6ebc:
+        name: 'Speakers Content'
+        handle: speakersContent
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          cda8f03a-678c-4dd1-b11e-887353ccd915:
+            tabs:
+              -
+                name: 'Customer Speakers'
+                sortOrder: 1
+                fields:
+                  74997c87-9aab-416b-9a53-56cbca0b3146:
+                    required: false
+                    sortOrder: 1
+                  e6e6e753-7381-4eb7-8f7a-3130924ca9cd:
+                    required: false
+                    sortOrder: 3
+                  fb9956c3-e5f8-4d68-aabf-48f5fa4acfc4:
+                    required: false
+                    sortOrder: 2
 siteGroups:
   aadf3226-469d-4bed-ba8c-d96a433e9a7c:
     name: 'unite craft'
@@ -5692,100 +5847,11 @@ sites:
     baseUrl: $DEFAULT_SITE_URL
     sortOrder: '1'
     primary: '1'
-superTableBlockTypes:
-  c71fc5b3-bd5e-4548-870f-baf8edee3e2c:
-    field: 47a12a75-d16f-45cd-bc32-1c7dd05f1b0c
-    fields:
-      721a043a-b975-43be-aa48-acb8b41da79d:
-        name: 'Individual Price'
-        handle: individualPrice
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      ac8ef325-489c-45f3-bffc-f58bd569d330:
-        name: 'Group 4 Price'
-        handle: group4Price
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-      db7fe83c-3aff-42af-aede-1e5fc55df3c0:
-        name: 'Ticket Sale Dates'
-        handle: ticketSaleDates
-        instructions: ''
-        searchable: false
-        translationMethod: site
-        translationKeyFormat: null
-        type: craft\fields\Matrix
-        settings:
-          minBlocks: ''
-          maxBlocks: ''
-          contentTable: '{{%matrixcontent_ticketsaledates}}'
-          propagationMethod: all
-        contentColumnType: string
-        fieldGroup: null
-      eda767f7-2bb4-46a8-a9bc-eec7ca1ba262:
-        name: 'Group 8 Price'
-        handle: group8Price
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-    fieldLayouts:
-      85e52dfe-3ce3-49bb-b837-2f7a892ac507:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              721a043a-b975-43be-aa48-acb8b41da79d:
-                required: false
-                sortOrder: 2
-              ac8ef325-489c-45f3-bffc-f58bd569d330:
-                required: false
-                sortOrder: 3
-              db7fe83c-3aff-42af-aede-1e5fc55df3c0:
-                required: false
-                sortOrder: 1
-              eda767f7-2bb4-46a8-a9bc-eec7ca1ba262:
-                required: false
-                sortOrder: 4
 system:
   edition: solo
   live: true
   name: Unite
-  schemaVersion: 3.2.16
+  schemaVersion: 3.3.3
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
