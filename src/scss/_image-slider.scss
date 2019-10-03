@@ -4,7 +4,7 @@
 .slider-block{
   background: linear-gradient(to right top, RGBA(117, 55, 151, 1) 0%, RGBA(255, 0, 87, 1) 100%);
 }
-.slider-block{
+.slider-block, .thank-you-slider-block{
   display: flex;
   flex-direction: column;
   width: 100vw !important;

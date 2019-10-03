@@ -1,4 +1,4 @@
-dateModified: 1570109405
+dateModified: 1570114200
 email:
   fromEmail: collin.klopstein@ungerboeck.com
   fromName: 'unite craft'
@@ -5400,7 +5400,7 @@ sections:
       39e3e5d3-49fa-48ee-8bad-58d59c15d392:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: 'thank-you/{slug}'
+        uriFormat: '{slug}'
         template: thankYou/_entry
     entryTypes:
       99e63dcb-2a48-48c2-8660-2e4f66073996:
