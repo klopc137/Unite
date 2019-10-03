@@ -1,0 +1,99 @@
+{% for block in entry.thankYouContent.all() %}
+	{% switch block.type %}
+	
+		{% case "thankYouHeader" %}
+		<section class="medium-header main-content" style="background-image: url({{siteUrl}}{{ block.backgroundImage.one().getUrl() }});">
+			<div class="overlay"></div>
+			<div class="main-content-left">
+				<div class="highlighted-heading-wrapper">
+					<div class="static-title">{{ block.staticTitleWord }}</div>
+					<div class="highlight">
+						<div class="highlighted-text">
+							{{block.animatedTitleWord}}
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none">
+								<path class="path" d="M455,170 C392,148 24,163 9,165 C7,138 3,50 5,29 C28,25 461,-6 495,20 C494,44 493,137 492,150" ></path>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="intro">
+					<div>
+						<p>{{ block.description }}</p>
+					</div>
+					<div><a href="{{ block.linkUrl }}" class="button-block">{{ block.linkText }}</a></div>
+				</div>
+			</div>
+		</section>
+	
+		{% case "quoteSlider" %}
+		<section class="quote-swiper-wrapper">	
+				{% set quoteEntries = block.quote.all() %}  
+				{% for entry in quoteEntries %}
+				{% if loop.first %}
+				
+				<div class="quote-swiper-container">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+				{% endif %}
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<div class="quote">{{entry.quote}}</div>
+							<div class="customer">{{entry.customerName}}</div>
+						</div>
+				{% if loop.last %}</div></div>{% endif %}
+				{% endfor %}
+			 <!-- Add Pagination -->
+    		<div class="swiper-pagination"></div>
+    	</section>
+
+    	{% case "photoGalleryCallout" %}
+    	<section class="standard-wrapper ty-callout">
+    		<div class="intro-title"><h2>{{ block.blockTitle }}</h2></div>
+    		<div class="block-image"><img src="{{siteUrl}}{{block.blockBanner.one().getUrl()}}"></div>
+    		<div><a href="{{ block.linkUrl }}" class="button-block" target="_blank">{{ block.linkText }}</a></div>
+    	</section>	
+
+    	{% case "parallaxSideImage" %}
+    	<section class="parallax-box">
+    		<div class="standard-wrapper">
+    			<div class="page-content-wrapper">
+    			<div class="inner">
+    			<div class="side-image-wrapper">
+    				{% if block.isMediaOnLeft %}
+    				<div class="image-wrapper first">
+    					<div class="image-frame">
+    						<img class="image-wrapper-image" src="{{siteUrl}}{{ block.sideImage.one().getUrl() }}" />
+    					</div>
+    				</div>
+
+    				<div class="image-wrapper-text parallax last">
+    					<div class="intro-title"><h2>{{ block.blockTitle }}</h2></div>
+    					<div class="intro-teaser"><p>{{ block.blockTeaser }}</p></div>
+    					<div class="intro-description"><p>{{ block.blockDescription }}</p></div>
+    				</div>
+    				{% else %}
+    				<div class="image-wrapper-text parallax first">
+    					<div class="intro-title"><h2>{{ block.blockTitle }}</h2></div>
+    					<div class="intro-teaser"><p>{{ block.blockTeaser }}</p></div>
+    					<div class="intro-description"><p>{{ block.blockDescription }}</p></div>
+    					<div><a href="{{ block.linkUrl }}" class="button-block" target="_blank">{{ block.linkText }}</a></div>
+    				</div>
+    				<div class="image-wrapper last">
+    					<div class="image-frame">
+    						<img class="image-wrapper-image" src="{{siteUrl}}{{ block.sideImage.one().getUrl() }}" />
+    					</div>
+    				</div>
+    				{% endif %}
+    			</div>
+    			</div>
+    			</div>
+    		</div>		
+    	</section>
+    				
+		{% default %}
+		
+	
+	{% endswitch %}
+
+    
+{% endfor %}

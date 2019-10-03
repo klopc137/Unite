@@ -222,7 +222,128 @@ ul{
   .no-list-style{
     list-style: none;
   }
-  
+
+.main-content-left{
+    width: 1200px;
+    margin: auto;
+    text-align: left;
+    z-index: 2;
+
+    .highlighted-heading-wrapper {
+      color: #fff;
+        font-size: 375%;
+        text-shadow: none;
+        line-height: 1.2;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-align: inherit;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+
+      div {
+        vertical-align: baseline;
+        display: inline-block;
+      }
+
+      .highlight {
+        color: #fff;
+        font-size: 100%;
+        text-shadow: none;
+        line-height: 1.2;
+        font-weight: 700;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        font-weight: 700;
+        padding: 0;
+
+        .highlighted-text {
+          position: relative;
+          z-index: 2;
+          padding: 0 10px;
+          display: inline-block;
+          vertical-align: top;
+          text-decoration: none!important;
+          text-transform: lowercase;
+          //opacity: 0;
+          //animation: opacity 5s linear forwards;
+
+          svg {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 105%;
+            height: 120%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            overflow: visible;
+
+            path {
+              opacity: 0;
+              stroke-dasharray: 1217, 1217;
+              stroke: #ff165e;
+              stroke-opacity: 1;
+              stroke-width: 10px;
+              fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                animation: outline 2s linear forwards 2s;
+            }
+            /*@keyframes opacity{
+              from{
+                opacity: 0;
+              }
+              to{
+                opacity: 1;
+              }
+            }*/
+            @keyframes outline {
+              from{
+                stroke-dashoffset: 1217;
+                opacity: 1;
+              }
+              to {
+                stroke-dashoffset: 0;
+                opacity: 1;
+              }
+            }
+          }
+
+        }
+
+      }
+
+    }
+    .intro {
+      margin: 0em 0em 1.5625em;
+      width: 100%;
+      overflow: visible;
+      font-size: 24px;
+      opacity: 1;
+      transform-origin: 50% 50% 0px;
+      transform: matrix(1, 0, 0, 1, 0, 0);
+
+      div{
+
+        color: #fff;
+        text-shadow: none;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.5;
+        text-decoration: none;
+        text-align: left;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        max-width: 480px;
+      }
+
+    }
+  } 
 /* FOOTER */
 
 .footer_bar_wrapper {

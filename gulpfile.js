@@ -71,6 +71,7 @@ gulp.task('browser-sync', ['sass', 'js', 'twig'], function () {
 gulp.task('sass', function () {
     return gulp.src(paths.scss)
         .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write())
         // Stay live and reload on error
         .pipe(plumber({
             handleError: function (err) {

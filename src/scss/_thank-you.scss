@@ -1,6 +1,7 @@
 .medium-header{
 	height: 700px;
 	position: relative;
+	display: flex;
 
 	.overlay{
 		position: absolute;
@@ -9,10 +10,7 @@
 		background-color: rgba(0, 0, 0, 1);
 	}
 
-	.main-content-left{
-		max-width: 1200px;
-		margin: auto;
-	}
+	
 }
 .ty-callout{
 	padding: 40px 0;

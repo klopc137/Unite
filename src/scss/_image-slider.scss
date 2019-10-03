@@ -1,9 +1,14 @@
+.thank-you-slider-block{
+  background: $color-purple !important;
+}
+.slider-block{
+  background: linear-gradient(to right top, RGBA(117, 55, 151, 1) 0%, RGBA(255, 0, 87, 1) 100%);
+}
 .slider-block{
   display: flex;
   flex-direction: column;
   width: 100vw !important;
   //height: 500px !important;
-  background: linear-gradient(to right top, RGBA(117, 55, 151, 1) 0%, RGBA(255, 0, 87, 1) 100%);
   position: relative;
   padding: 20px 0;
 
@@ -25,6 +30,9 @@
     p{
       margin: auto;
       align-self: center;
+      color: $color-pink;
+      text-transform: lowercase;
+      font-weight: 700;
     }
   }
 
@@ -68,9 +76,9 @@
           transform: scale(0.8);
         }
       img{
-        width: 100%;
-
-
+        //width: 100%;
+        max-height: 413px;
+        max-width: 100%;
       }
     }
   }

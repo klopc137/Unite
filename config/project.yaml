@@ -1,4 +1,4 @@
-dateModified: 1568217334
+dateModified: 1570109405
 email:
   fromEmail: collin.klopstein@ungerboeck.com
   fromName: 'unite craft'
@@ -5390,6 +5390,48 @@ sections:
                     required: false
                     sortOrder: 2
     propagationMethod: all
+  c0db6a69-8c0e-41e6-8619-9f45ee729135:
+    name: 'Thank You'
+    handle: thankYou
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      39e3e5d3-49fa-48ee-8bad-58d59c15d392:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'thank-you/{slug}'
+        template: thankYou/_entry
+    entryTypes:
+      99e63dcb-2a48-48c2-8660-2e4f66073996:
+        name: 'Thank You'
+        handle: thankYou
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          03870a27-b058-4add-bf44-0a90d9b8047a:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  1254a335-1401-449a-b84c-b56855f2538f:
+                    required: false
+                    sortOrder: 3
+                  364d1068-bd9f-4301-86dd-51ab3a8bde51:
+                    required: false
+                    sortOrder: 4
+                  6c14480b-7937-473d-9313-aafb10954a86:
+                    required: false
+                    sortOrder: 1
+                  9adbfed5-3d94-4885-b5fc-136e68fdb999:
+                    required: false
+                    sortOrder: 2
+                  b1df267e-b9dd-4e0c-914f-8d870dd0fd03:
+                    required: false
+                    sortOrder: 5
   d5bb4eea-199b-4d9a-aa9a-66f6d3f0448a:
     name: Conferences
     handle: conferences
@@ -5544,6 +5586,23 @@ sections:
                   a5754afb-2f2f-46e6-964c-2e2515c59dd5:
                     required: false
                     sortOrder: 2
+      32e48445-f7ab-4ac5-922f-92fd3d8ccfa2:
+        name: 'Thank You Old'
+        handle: thankYouOld
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 14
+        fieldLayouts:
+          8c76e3b9-0f54-4ebd-b95e-2ca94e7e99bf:
+            tabs:
+              -
+                name: 'Thank You'
+                sortOrder: 1
+                fields:
+                  2a1f04c6-e625-42b4-9bc5-77f393c6ef0e:
+                    required: false
+                    sortOrder: 1
       5cd54c11-685f-4538-9f31-f79cc9dbccb1:
         name: Sessions
         handle: sessions
@@ -5752,18 +5811,24 @@ sections:
           0e6ba362-4474-48cf-831b-82adacc6a81f:
             tabs:
               -
-                name: 'Thank You'
+                name: Conferences
                 sortOrder: 1
                 fields:
-                  2a1f04c6-e625-42b4-9bc5-77f393c6ef0e:
-                    required: false
-                    sortOrder: 1
-                  5b5c4e9a-93a0-42b2-a3ce-0ded668e74fb:
-                    required: false
-                    sortOrder: 2
-                  a5754afb-2f2f-46e6-964c-2e2515c59dd5:
+                  1254a335-1401-449a-b84c-b56855f2538f:
                     required: false
                     sortOrder: 3
+                  364d1068-bd9f-4301-86dd-51ab3a8bde51:
+                    required: false
+                    sortOrder: 4
+                  6c14480b-7937-473d-9313-aafb10954a86:
+                    required: false
+                    sortOrder: 1
+                  9adbfed5-3d94-4885-b5fc-136e68fdb999:
+                    required: false
+                    sortOrder: 2
+                  b1df267e-b9dd-4e0c-914f-8d870dd0fd03:
+                    required: false
+                    sortOrder: 5
     propagationMethod: all
   e814655b-e6db-4f4f-93e7-7313954bcb67:
     name: Perks
